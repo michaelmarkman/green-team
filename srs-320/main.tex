@@ -763,96 +763,113 @@ Any user with access to the tablet application can do browsing and searching for
 FUNCTIONAL REQUIREMENTS}
 \subsection[USE CASES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 USE CASES}
-\bigskip
 \subsubsection{Data Entry (Forms)}
-\begin{flushleft}
-\tablehead{}
-\begin{supertabular}{|m{3.17056in}|m{3.5in}|}
-\hline
 
-\selectlanguage{english}\bfseries\color{black} Use Case 1 Description &
-Main Scenario
-\\\hline
-{\selectlanguage{english}\bfseries\color{black} Fill out septic tank inspection}
+\subsubsection{\textit{Use Case 1}}
+
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Fill out septic tank inspection form}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form.}
 
-{\selectlanguage{english}\color{black} \textit{Precondition:} User has successfully logged in and accessed the form entry user interface for the septic tank.}
-~
- &
-\bigskip
-1) System presents modifiable septic tank information form.
-\newline
-2) User fills out each required field of the form.
-\newline
-3) User submits the form on tablet.
-\newline
-4) System determines that each required and non-required field entered is valid.
-\newline
-5) System creates an accessible local copy.
-\newline
-6) System displays a response when successfully entering form.
-\newline
-7) User safely closes out of process (data is preserved).
+{\selectlanguage{english}\color{black} \textit{Precondition:} User  successfully logged in and accessed the form entry user interface for the septic tank.}
 
-\\\hline
-\end{supertabular}
-\end{flushleft}
+{\selectlanguage{english}\color{black} \textit{Postcondition:}  Data is stored to be submitted to a central database}
+\newline
 
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}
+\begin{enumerate}
+\item System presents modifiable septic tank information form.
 
-\begin{flushleft}
-\tablehead{}
-\begin{supertabular}{|m{3.17056in}|m{3.5in}|}
-\hline
+\item User fills out each required field of the form.
 
+\item User submits the form on tablet.
 
-\selectlanguage{english}\bfseries\color{black} Use Case 2 Description &
-Main Scenario
-\\\hline
-{\selectlanguage{english}\bfseries\color{black} Fill out well water inspection form}
+\item System determines that each required and non-required field entered is valid.
+
+\item System creates an accessible local copy.
+
+\item System displays a response when successfully entering form.
+
+\item User safely closes out of process (data is preserved).
+\end{enumerate}
+
+{\selectlanguage{english}\color{black} \textit{Exception Scenario:}}
+\begin{enumerate}
+\item User forgets to enter information in 'required field'.
+\begin{enumerate}
+\item System notifies user of empty fields and does not submit.
+\end{enumerate}
+
+\item User enters an invalid form entry.
+\begin{enumerate}
+\item System displays invalid form entry and does not submit.
+\end{enumerate}
+
+\item System shuts down during data submission.
+\begin{enumerate}
+\item System can show user whether or not data was submitted successfully. 
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{\textit{Use Case 2}} 
+
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Fill out well water inspection form}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects water well inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects well water inspection form.}
 
-{\selectlanguage{english}\color{black} \textit{Precondition:} User has successfully logged in and accessed the form entry user interface for the water well.}
-~
- &
-\bigskip
-1) System presents modifiable well water inspection form.
-\newline
-2) User fills out each \textit{required} field of the form.
-\newline
-3) User submits the form on tablet.
-\newline
-4) System determines that each required and non-required field entered is valid.
-\newline
-5) System allocates memory and creates an accessible local copy.
-\newline
-6) System displays a response when successfully entering form.
-\newline
-7) User safely closes out of process (data is preserved).
+{\selectlanguage{english}\color{black} \textit{Precondition:} Successfully logged in and accessed the form entry user interface for water well inspection.}
 
-\\\hline
-\end{supertabular}
-\end{flushleft}
+{\selectlanguage{english}\color{black} \textit{Postcondition:}  Data is stored to be submitted to a central database}
+\newline
 
-\begin{flushleft}
-\tablehead{}
-\begin{supertabular}{|m{3.17056in}|m{3.5in}|}
-\hline
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}
+\begin{enumerate}
+\item System presents modifiable well water information form.
 
+\item User fills out each \textit{required} field of the form.
 
-\selectlanguage{english}\bfseries\color{black} Use Case 3 Description &
-Main Scenario
-\\\hline
-{\selectlanguage{english}\bfseries\color{black} Fill out well restaurant inspection form}
+\item User submits the form on tablet.
+
+\item System determines that each required and non-required field entered is valid.
+
+\item System allocates memory and creates an accessible local copy.
+
+\item System displays a response when successfully entering form.
+
+\item User safely closes out of process (data is preserved).
+\end{enumerate}
+
+{\selectlanguage{english}\color{black} \textit{Exception Scenarios:}}
+\begin{enumerate}
+\item User forgets to enter information in 'required field'.
+\begin{enumerate}
+\item System notifies user of empty fields and does not submit.
+\item User presented with partially filled out form.
+\end{enumerate}
+
+\item User enters an invalid form entry.
+\begin{enumerate}
+\item System displays invalid form entry and does not submit.
+\item User presented with partially filled out form.
+\end{enumerate}
+
+\item System shuts down during data submission.
+\begin{enumerate}
+\item System shows user whether or not data was submitted successfully.
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{\textit{Use Case 3}}
+
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Fill out restaurant inspection form}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
 
@@ -860,102 +877,244 @@ Main Scenario
 
 {\selectlanguage{english}\color{black} \textit{Trigger:} User selects restaurant inspection form to fill out.}
 
-{\selectlanguage{english}\color{black} \textit{Precondition:} User has successfully logged in and accessed the form entry user interface for restaurant inspection.}
-~
- &
-\bigskip
-1) System presents modifiable well water inspection form.
-\newline
-2) User fills out each \textit{required} field of the form.
-\newline
-3) User submits the form on tablet.
-\newline
-4) System determines that each required and non-required field entered is valid.
-\newline
-5) System allocates memory and creates an accessible local copy.
-\newline
-6) System displays a response when successfully entering form.
-\newline
-7) User safely closes out of process (data is preserved).\\\hline
-\end{supertabular}
-\end{flushleft}
-\subsubsection{Browsing \& Search}
-\begin{flushleft}
-\tablehead{}
-\begin{supertabular}{|m{3.17056in}|m{3.5in}|}
-\hline
+{\selectlanguage{english}\color{black} \textit{Precondition:} User has passed login authentication, and has chosen to submit data for a restaurant inspection.}
 
-\selectlanguage{english}\bfseries\color{black} Use Case 1 Description &
-Main Scenario
-\\\hline
-{\selectlanguage{english}\bfseries\color{black} Search location for prior inspection report}
+{\selectlanguage{english}\color{black} \textit{Postcondition:}  Data is stored to be submitted to a central database}
+\newline
+
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}
+\begin{enumerate}
+\item The page for restaurant inspection form is shown.
+\item User records location and name of restaurant
+\item User fills out fields in form to record data form inspection
+\item User clicks save button.
+\item Data is stored locally
+\end{enumerate}
+
+{\selectlanguage{english}\color{black} \textit{Exception Scenario:}}
+\begin{enumerate}
+\item User forgets to enter information in 'required field'.
+\begin{enumerate}
+\item System notifies user of empty fields and does not submit.
+\item User presented with partially filled out form.
+\end{enumerate}
+
+\item User enters an invalid form entry.
+\begin{enumerate}
+\item System displays invalid form entry and does not submit.
+\item User presented with partially filled out form.
+\end{enumerate}
+
+\item System shuts down during data submission.
+\begin{enumerate}
+\item System shows user whether or not data was submitted successfully. 
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Browsing \& Search}
+\subsubsection{\textit{Use Case 1}}
+
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Search for prior inspection report}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects water well inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
 
-{\selectlanguage{english}\color{black} \textit{Precondition:} User has successfully logged in and accessed the form entry user interface for the water well.}
-~
- &
+{\selectlanguage{english}\color{black} \textit{Precondition:} User has logged in and is on the lookup report screen.}
 
-\\\hline
-\end{supertabular}
-\end{flushleft}
+{\selectlanguage{english}\color{black} \textit{Postcondition:} System displays selected prior report of a location to the user.}
+\newline
+
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}
+\begin{enumerate}
+\item User enters an address or location title for the specified document
+\item System queries external database with location and retrieves records with a matching location
+\item System displays a list of retrieved records and their dates, sorted by date
+\item User is given option to narrow results by inspection type (restaurant, water well, septic) or keyword
+\item If user chooses narrowing option, remove from the list any reports void of the keyword or inspection type
+\item User selects from list the desired report
+\item System displays screen for relevant information from record
+\end{enumerate}
+
+{\selectlanguage{english}\color{black} \textit{Exception Scenario:}}
+\begin{enumerate}
+\item System cannot connect to database.
+\begin{enumerate}
+\item Screen displays connection error message and asks user to try again later.
+\item User selects 'Ok' button and system returns to search screen
+\end{enumerate}
+
+\item The database returns no record for the given location.
+\begin{enumerate}
+\item System displays ''No matches found''.
+\item User clicks on 'Ok' button to return to the lookup by location screen.
+\end{enumerate}
+
+\item None of the records match the inputted keyword or inspection type
+\begin{enumerate}
+\item Display message, ''No reports match the specified keyword''
+\item User clicks 'Ok', return to step 4
+\end{enumerate}
+\end{enumerate}
 
 \subsubsection{Delayed Upload}
 
-\begin{flushleft}
-\tablehead{}
-\begin{supertabular}{|m{3.17056in}|m{3.5in}|}
-\hline
+\subsubsection{\textit{Use Case 1}}
 
-\selectlanguage{english}\bfseries\color{black} Use Case 1 Description &
-Main Scenario
-\\\hline
-{\selectlanguage{english}\bfseries\color{black} Upload a specific piece of form data}
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black}User attempts to upload a specific piece of form data.}
 
-{\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
+{\selectlanguage{english}\color{black} \textit{Primary Actor:} System}
 
-{\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
+{\selectlanguage{english}\color{black} \textit{Secondary Actor:} User}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects water well inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
 
-{\selectlanguage{english}\color{black} \textit{Precondition:} User has successfully logged in and accessed the form entry user interface for the water well.}
-~
- &
+{\selectlanguage{english}\color{black} \textit{Precondition:}User has completed and saved some type of form data, and is associated with some online database. User is on the start page and has signed in successfully. Alternatively, User opts to send form data immediately after saving to device and begins at step 2.}
 
+{\selectlanguage{english}\color{black} \textit{Postcondition:}Form data has not already been submitted to the database and is added successfully. If conditions are not correct for proper form data upload, data is not uploaded.}
+\newline
 
-\\\hline
-\end{supertabular}
-\end{flushleft}
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}
+\begin{enumerate}
+\item User navigates the form data on the application to find the data they desire to upload.
+\item User indicates that they want to upload the form data.
+\item System verifies that the form data is acceptable for submission to online database.
+\item System verifies that internet connection is available.
+\item System verifies that connection to associated database is available.
+\item System verifies that given form data has not already been submitted to the database.
+\item System asks the user for confirmation to send the form data.
+\item User gives confirmation of intent to send the form data
+\item System adds the new form data to the database using the internet connection available.
+\item System notifies the user of successful upload of the data.
+\end{enumerate}
 
-\begin{flushleft}
-\tablehead{}
-\begin{supertabular}{|m{3.17056in}|m{3.5in}|}
-\hline
+{\selectlanguage{english}\color{black} \textit{Exception Scenario:}}
 
+\begin{enumerate}
+\item Form data is not acceptable for upload.
+\begin{enumerate}
+\item System notifies the user that the form data is not acceptable for upload. System 
+specifies which fields in the form data are unacceptable and asks that they be fixed before submission.
+\item User is returned to the form's viewing page.
+\end{enumerate}
 
-\selectlanguage{english}\bfseries\color{black} Use Case 2 Description &
-Main Scenario
-\\\hline
-{\selectlanguage{english}\bfseries\color{black} Batch upload all forms}
+\item No internet connection is available.
+\begin{enumerate}
+\item System notifies the user that internet connection is not available and to try again once they are within access range.
+\item User is returned to the form's viewing page.
+\end{enumerate}
 
-{\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
+\item Only internet connections that are available are not Wi-Fi connections.
+\begin{enumerate}
+\item System asks the user to verify that they would like to send the connection on the mobile network.
+\item If user accepts, use case proceeds as normal at step 4.
+\item If user refuses, system notifies the user to try uploading again once they are within access range.
+\item User is returned to the form's viewing page.
+\end{enumerate}
 
-{\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
+\item System is unable to connect with the database.
+\begin{enumerate}
+\item System notifies the user that it is impossible to connect to the database and to verify that the database is online.
+\item User is returned to the form's viewing page.
+\end{enumerate}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects water well inspection form to fill out.}
+\item Form data has already been submitted to the database.
+\begin{enumerate}
+\item System notifies the user that the form has already been uploaded before.
+\item User is returned to the form's viewing page.
+\end{enumerate}
 
-{\selectlanguage{english}\color{black} \textit{Precondition:} User has successfully logged in and accessed the form entry user interface for the water well.}
-~
- &
+\item User declines the confirmation to send the data.
+\begin{enumerate}
+\item Form data is not sent. User is returned to the form's viewing page.
+\end{enumerate}
 
+\item No internet connection is available.
+\begin{enumerate}
+\item System notifies the user that internet connection is not available and to try again once they are within access range.
+\item User is returned to the form's viewing page
+\end{enumerate}
+\end{enumerate}
 
-\\\hline
-\end{supertabular}
-\end{flushleft}
+\subsubsection{\textit{Use Case 2}}
+
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black}Batch upload all forms that are not already uploaded.}
+
+{\selectlanguage{english}\color{black} \textit{Primary Actor:} System}
+
+{\selectlanguage{english}\color{black} \textit{Secondary Actor:} User, Databse}
+
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
+
+{\selectlanguage{english}\color{black} \textit{Precondition:}  User has completed and saved some type of form data, and the device is associated with some online database. User is on the start page and has signed in successfully. Alternatively, setting for automatic upload is on and System engages automatically, starting at step 2.}
+
+{\selectlanguage{english}\color{black} \textit{Postcondition:} Form data that has not already been submitted to the database and is acceptable for upload is added successfully. If conditions are not correct for proper form data upload, data is not uploaded.}
+
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}
+\begin{enumerate}
+\item User indicates that they would like to perform a batch upload of form data.
+\item System verifies that internet connection is available.
+\item System verifies that connection to associated database is available.
+\item System cross-references form data on the device and on the database to find which data is on the device and not in the database.
+\item System displays a list of the eligible form data on the device and requests the user confirms the data.
+\item User selects the data they wish to upload to the database and confirms to send those forms.
+\item System checks each data that is desired to be uploaded is acceptable to be added to the database.
+\item System sends acceptable form data to the database to be added.
+\item System notifies the user of which form data was successfully sent to the database.
+\end{enumerate}
+
+{\selectlanguage{english}\color{black} \textit{Exception Scenario:}}
+\begin{enumerate}
+\item No internet connection is available.
+\begin{enumerate}
+\item System notifies the user that internet connection is not available and to try again once they are within access range.
+\item User is returned to the main viewing page.
+\end{enumerate}
+
+\item Only internet connections that are available are not Wi-Fi connections.
+\begin{enumerate}
+\item System asks the user to verify that they would like to send the connection on the mobile network.
+\item If user accepts, use case proceeds as normal at step 3.
+\item If user refuses, system notifies the user to try uploading again once they are within access range.
+\item User is returned to the main viewing page.
+\end{enumerate}
+
+\item System is unable to connect with the database.
+\begin{enumerate}
+\item System notifies the user that it is impossible to connect to the database and to verify that the database is online.
+\item User is returned to the main viewing page.
+\end{enumerate}
+
+\item All form data on the device is also on the database.
+\begin{enumerate}
+\item System notifies the user that there is no data to be upload to the database.
+\item User is returned to the main viewing page.
+\end{enumerate}
+
+\item User declines to upload data.
+\begin{enumerate}
+\item User is returned to the main page.
+\end{enumerate}
+
+\item Some form data is not acceptable to be uploaded to the database
+\begin{enumerate}
+\item Any data that is not acceptable is removed from the list of data to be uploaded. After batch upload is finished, a notification is sent with a list of any data unacceptable to be uploaded.
+\end{enumerate}
+
+\item No internet connection is available.
+\begin{enumerate}
+\item System notifies the user that internet connection is not available and to try again once they are within access range.
+\item User is returned to the main viewing page.
+\end{enumerate}
+
+\item System is unable to connect with the database.
+\begin{enumerate}
+\item System notifies the user that it is impossible to connect to the database and to verify that the database is online.
+\item User is returned to the main viewing page.
+\end{enumerate}
+\end{enumerate}
 
 \clearpage\section[TEST PLAN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 TEST PLAN}
