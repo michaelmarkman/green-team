@@ -168,8 +168,10 @@ Prepared by:
 {\centering\selectlanguage{english}\bfseries\color{black}
 Ather Akhtar, Andrew Chang, Peter Marathas, Andrew Marchetti, \par} 
 {\centering\selectlanguage{english}\bfseries\color{black}
- Michael Markman, Eric Maryea, Shawn Sowersby, and Alex Sullivan.
+ Michael Markman, Eric Maryea, Neven Recchia,
 \par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Shawn Sowersby, Alex Sullivan, and Josh Tranfaglia.\par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
 University of Massachusetts
@@ -222,7 +224,7 @@ WRITE HERE}
 SCOPE}
 {\selectlanguage{english}\rmfamily\color{black}
 This project contains multiple sub-projects and systems. 
-\\		 \\
+\\     \\
 This new digital method requires a database to hold different types of inspection forms (restaurant, water well, septic tank). The database will be searchable and sortable by keywords or established parameters thus improving accessibility and simplifying analysis. Storing this data digitally will allow the customer to better analyze patterns and create a more permanent location for the data to reside. It will act as an intuitive tool to help the inspector utilize and access data in the future. To increase usability of this database, a user interface must be created to provide access and retrieval of information. This application will focus on usability of the database and a later described portion will focus on portability, thus one can think of this application as residing in an office environment. The application should include a convenient and easy method to search, sort, and analyze data from the restaurant inspections, well water quality reports, and septic tank inspections. Septic tank and well water quality inspection data should also be viewable on a geographical map with the ability to show change over time. This will illuminate differences and trends in the data that may help explain and predict the cause of said trends. The cataloguing of restaurant health inspection data could be facilitated by a form on a portable application (i.e. mobile, tablet). This portable application should be designed to locally store the inputted data and convert it to a form readable by the database so it can add the report to the rest of the database when connected. Overall, creating and structuring this database for the customer and providing easy-to-use tools for accessing it, will assist him in his inspections and simplify the retrieval of key information the customer might be interested in at a later date.
 \subsubsection{Sub Projects}
 \begin{itemize}
@@ -257,7 +259,7 @@ Features described have included user authentication, data entry for eligible us
 \subsection[INTENDED AUDIENCE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 INTENDED AUDIENCE}
 {\selectlanguage{english}\rmfamily\color{black}
-		The intended audience is for health inspectors who want to use a digital alternative to record and store information as an alternative to physical methods. The primary audience will be the health inspector of the town of Leverett and Sunderland Massachusetts.}
+    The intended audience is for health inspectors who want to use a digital alternative to record and store information as an alternative to physical methods. The primary audience will be the health inspector of the town of Leverett and Sunderland Massachusetts.}
 
 \subsection[DEFINITIONS, ACRONYMS, AND
 ABBREVIATIONS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
@@ -407,7 +409,7 @@ The user interface for the system will be an app based application on a tablet. 
 \subsection[HARDWARE INTERFACES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 HARDWARE INTERFACES}
 {\selectlanguage{english}\rmfamily\color{black}
-	The hardware interfaces of the system will be run on an android device. An internet connection to allow the software interfaces to connect to the internet to sync with files in the database. }
+  The hardware interfaces of the system will be run on an android device. An internet connection to allow the software interfaces to connect to the internet to sync with files in the database. }
 
 \subsection[SOFTWARE INTERFACES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SOFTWARE INTERFACES}
@@ -613,44 +615,98 @@ BROWSING \& SEARCH}
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User wants to search for a list of inspection reports matching an entered keyword.}
 
-{\selectlanguage{english}\color{black} \textit{Precondition:} User has logged in and is on the lookup report screen.}
+{\selectlanguage{english}\color{black} \textit{Preconditions:} User has logged in and is on the inital lookup report screen which contains a list of all inspection reports.}
 
-{\selectlanguage{english}\color{black} \textit{Postcondition:} System displays selected prior report of a location to the user.}
+{\selectlanguage{english}\color{black} \textit{Postcondition:} System displays list of prior reports matching search term.}
 \newline
 
 {\selectlanguage{english}\color{black} \textit{Main Scenario:}}
 \begin{enumerate}
-\item User enters an address or location title for the specified document
-\item System queries external database with location and retrieves records with a matching location
+\item User enters a keyword to search
+\item System queries external database with location and retrieves records that contain the keyword
 \item System displays a list of retrieved records and their dates, sorted by date
-\item User is given option to narrow results by inspection type (restaurant, water well, septic) or keyword
-\item If user chooses narrowing option, remove from the list any reports void of the keyword or inspection type
-\item User selects from list the desired report
-\item System displays screen for relevant information from record
 \end{enumerate}
 
-{\selectlanguage{english}\color{black} \textit{Exception Scenario:}}
+{\selectlanguage{english}\color{black} \textit{Exception Scenarios:}}
 \begin{enumerate}
-\item System cannot connect to database.
+\item System cannot connect to database
 \begin{enumerate}
-\item Screen displays connection error message and asks user to try again later.
-\item User selects 'Ok' button and system returns to search screen
+\item Screen displays connection error message and asks user to try again later
+\item User selects 'Ok' button and system returns to the lookup report screen
 \end{enumerate}
 
-\item The database returns no record for the given location.
-\begin{enumerate}
-\item System displays ''No matches found''.
-\item User clicks on 'Ok' button to return to the lookup by location screen.
-\end{enumerate}
-
-\item None of the records match the inputted keyword or inspection type
+\item None of the records match the search keyword
 \begin{enumerate}
 \item Display message, ''No reports match the specified keyword''
-\item User clicks 'Ok', return to step 4
+\item User clicks 'Ok' and returns to the initial lookup report screen
 \end{enumerate}
 \end{enumerate}
+
+\subsubsection{\textit{Use Case 2}}
+
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black}Narrow down list of inspection reports}
+
+{\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
+
+{\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
+
+{\selectlanguage{english}\color{black} \textit{Trigger:} User wants to select criteria to narrow down a list of all inspection reports.}
+
+{\selectlanguage{english}\color{black} \textit{Preconditions:} User has logged in and is on the initial lookup report screen which contains a list of all inspection reports.}
+
+{\selectlanguage{english}\color{black} \textit{Postcondition:} System displays list of prior reports matching the selected criteria.}
+\newline
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}\
+\begin{enumerate}
+\item User selects criteria to narrow down all the inspection reports
+\item System queries external database with location and retrieves records that match the criteria
+\item System displays a list of retrieved records and their dates, sorted by date
+\end{enumerate}
+{\selectlanguage{english}\color{black} \textit{Exception Scenarios:}}
+\begin{enumerate}
+\item System cannot connect to database
+\begin{enumerate}
+\item Screen displays connection error message and asks user to try again later
+\item User selects 'Ok' button and system returns to the lookup report screen
+\end{enumerate}
+
+\item None of the records match the search keyword
+\begin{enumerate}
+\item Display message, ''No reports matching that criteria''
+\item User clicks 'Ok' and returns to the initial lookup report screen
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{\textit{Use Case 3}}
+
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black}View an inspection report}
+
+{\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
+
+{\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
+
+{\selectlanguage{english}\color{black} \textit{Trigger:} User wants to view a specific inspection report.}
+
+{\selectlanguage{english}\color{black} \textit{Preconditions:} User has logged in and is on the lookup report screen which contains a list inspection reports.}
+
+{\selectlanguage{english}\color{black} \textit{Postcondition:} System displays the selected inspection report.}
+\newline
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}\
+\begin{enumerate}
+\item User selects an inspection report
+\item System displays all data contained in the selected inspection report
+\end{enumerate}
+{\selectlanguage{english}\color{black} \textit{Exception Scenario:}}
+
+\begin{description}
+\item System cannot connect to database
+\begin{enumerate}
+\item Screen displays connection error message and asks user to try again later
+\item User selects 'Ok' button and system returns to the lookup report screen
+\end{enumerate}
+\end{description}
 
 \subsection[DELAYED UPLOAD]
 {\selectlanguage{english}\rmfamily\bfseries\color{black}
