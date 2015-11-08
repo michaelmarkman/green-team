@@ -404,12 +404,12 @@ REQUIREMENTS}
 \subsection[USER INTERFACES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 USER INTERFACES}
 {\selectlanguage{english}\rmfamily\color{black}
-The user interface for the system will be an app based application on a tablet. The user will enter information to pass the user authentication. The user will then be able to select which forms to access. The user will be able to enter form data in the app on the replicated forms for the inspection. The user will also be able to send the document to a printer or email it. The user will also be able to accept e-signatures directly inside the app. The app will also have the ability for the user to browse and search for information on the app. The user will be able to select for a delayed upload as well.}
+The user interface for the system will be an app based application on a tablet. The user will enter log-in parameters as user authentication. The user will then be able to select which records to access. The user will be able to enter record data in the app on the replicated forms for the inspection. The user will also be able to send the document to a printer or email it. The app will also have the ability for the user to browse and search for information on the app. The user will be able to select for a delayed upload as well.}
 
 \subsection[HARDWARE INTERFACES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 HARDWARE INTERFACES}
 {\selectlanguage{english}\rmfamily\color{black}
-  The hardware interfaces of the system will be run on an android device. An internet connection to allow the software interfaces to connect to the internet to sync with files in the database. }
+  The hardware interfaces of the system will be run on an android device. An internet connection will allow the software interfaces to connect to the internet and sync with records in the database. The tablet will also contain a local database allowing for complete offline access of previous record entry.  }
 
 \subsection[SOFTWARE INTERFACES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SOFTWARE INTERFACES}
@@ -417,22 +417,22 @@ SOFTWARE INTERFACES}
 \subsubsection{Operating System} 
 The software is being designed to run on Ionic. Ionic is a tool that is written in html, css, and javascript allowing for a web-app, ios-app- and android-app to be developed at once.
 \subsubsection{Web Server}
-The software will be able to sync with a database
+The software will be able to sync with a database as well as contain its own personal database. This will allow for consistent access to previously recorded data. The web server and local database will be synchronized with a consistent data-model. 
 \subsubsection{Database}
-The software will use a federated database to store all the data.}
+The software will use a federated database to store all the data. This federated database will allow for the decentralization of the two towns, Sunderland and Leverett but also provide access to all records through a common API. }
 
 \subsection[COMMUNICATION INTERFACES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 COMMUNICATION INTERFACES}
 {\selectlanguage{english}\rmfamily\color{black}
 
 \subsubsection{Form Interface}
-The application will provide electronic forms that the user needs.
+The application will provide electronic entries that the user needs. These entries will be modeled after the forms provided by the customer and provide the ability for the customer to submit an entry in any order required.
 
 \subsubsection{Web Communication}
-The application will be able to wirelessly sync with the database.
+The application will be able to wirelessly sync with the database. This feature will not be the only syncing mechanism but will provide an alternative to how data is uploaded. All syncing will interact through the web application which will allow the database to only interact with a single entity (the web application) thus preventing any write conflicts between the tablet and web application.
 
 \subsubsection{USB Communication}
-The application will be able to sync through a usb cable with the database.}
+The application will be able to sync through a usb cable with the database. This hard wire connection will provide full autonomy for the customer to upload specific forms to the web application. The USB connection will also be able to read from the computer in order to update attributes on the tablets local database.}
 
 \clearpage\section[NONFUNCTIONAL REQUIREMENTS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 NONFUNCTIONAL REQUIREMENTS}
