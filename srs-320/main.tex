@@ -490,7 +490,7 @@ DATA ENTRY (FORMS)}
 \begin{enumerate}
 \item System presents modifiable septic tank information form.
 
-\item User fills out each required field of the form.
+\item User fills out fields on the form.
 
 \item User submits the form on tablet.
 
@@ -507,17 +507,24 @@ DATA ENTRY (FORMS)}
 \begin{enumerate}
 \item User forgets to enter information in 'required field'.
 \begin{enumerate}
-\item System notifies user of empty fields and does not submit.
+\item System notifies user of empty fields and goes back to step 2.
 \end{enumerate}
 
 \item User enters an invalid form entry.
 \begin{enumerate}
-\item System displays invalid form entry and does not submit.
+\item System displays invalid form entry and goes back to step 2.
 \end{enumerate}
 
 \item System shuts down during data submission.
 \begin{enumerate}
 \item System can show user whether or not data was submitted successfully. 
+\end{enumerate}
+
+\item User cancels form
+\begin{enumerate}
+\item User selects cancel option
+\item System confirms with user that they selected cancel
+\item System displays main application screen
 \end{enumerate}
 \end{enumerate}
 
@@ -540,7 +547,7 @@ DATA ENTRY (FORMS)}
 \begin{enumerate}
 \item System presents modifiable well water information form.
 
-\item User fills out each \textit{required} field of the form.
+\item User fills out fields on the form.
 
 \item User submits the form on tablet.
 
@@ -558,18 +565,25 @@ DATA ENTRY (FORMS)}
 \item User forgets to enter information in 'required field'.
 \begin{enumerate}
 \item System notifies user of empty fields and does not submit.
-\item User presented with partially filled out form.
+\item User presented with partially filled out form and goes back to step 2.
 \end{enumerate}
 
 \item User enters an invalid form entry.
 \begin{enumerate}
 \item System displays invalid form entry and does not submit.
-\item User presented with partially filled out form.
+\item User presented with partially filled out form and goes back to step 2.
 \end{enumerate}
 
 \item System shuts down during data submission.
 \begin{enumerate}
 \item System shows user whether or not data was submitted successfully.
+\end{enumerate}
+
+\item User cancels form
+\begin{enumerate}
+\item User selects cancel option
+\item System confirms with user that they selected cancel
+\item System displays main application screen
 \end{enumerate}
 \end{enumerate}
 
@@ -591,8 +605,8 @@ DATA ENTRY (FORMS)}
 {\selectlanguage{english}\color{black} \textit{Main Scenario:}}
 \begin{enumerate}
 \item The page for restaurant inspection form is shown.
-\item User records location and name of restaurant
-\item User fills out fields in form to record data form inspection
+\item User chooses restaurant
+\item User fills out fields in form to record data from inspection
 \item User clicks save button.
 \item Data is stored locally
 \end{enumerate}
@@ -602,18 +616,25 @@ DATA ENTRY (FORMS)}
 \item User forgets to enter information in 'required field'.
 \begin{enumerate}
 \item System notifies user of empty fields and does not submit.
-\item User presented with partially filled out form.
+\item User presented with partially filled out form and go back to step 3.
 \end{enumerate}
 
 \item User enters an invalid form entry.
 \begin{enumerate}
 \item System displays invalid form entry and does not submit.
-\item User presented with partially filled out form.
+\item User presented with partially filled out form and go back to step 3.
 \end{enumerate}
 
 \item System shuts down during data submission.
 \begin{enumerate}
 \item System shows user whether or not data was submitted successfully. 
+\end{enumerate}
+
+\item User cancels form
+\begin{enumerate}
+\item User selects cancel option
+\item System confirms with user that they selected cancel
+\item System displays main application screen
 \end{enumerate}
 \end{enumerate}
 
@@ -726,13 +747,13 @@ BROWSING \& SEARCH}
 DELAYED UPLOAD}
 \subsubsection{\textit{Use Case 1}}
 
-\textit{Title: }{\selectlanguage{english}\bfseries\color{black}User attempts to upload a specific piece of form data.}
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black}User attempts to upload a record.}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} System}
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} User}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects record/inspection to upload.}
 
 {\selectlanguage{english}\color{black} \textit{Precondition:}User has completed and saved some type of form data, and is associated with some online database. User is on the start page and has signed in successfully. Alternatively, User opts to send form data immediately after saving to device and begins at step 2.}
 
@@ -809,7 +830,7 @@ specifies which fields in the form data are unacceptable and asks that they be f
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} User, Databse}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects record/inspection to upload.}
 
 {\selectlanguage{english}\color{black} \textit{Precondition:}  User has completed and saved some type of form data, and the device is associated with some online database. User is on the start page and has signed in successfully. Alternatively, setting for automatic upload is on and System engages automatically, starting at step 2.}
 
@@ -864,6 +885,7 @@ specifies which fields in the form data are unacceptable and asks that they be f
 \item Some form data is not acceptable to be uploaded to the database
 \begin{enumerate}
 \item Any data that is not acceptable is removed from the list of data to be uploaded. After batch upload is finished, a notification is sent with a list of any data unacceptable to be uploaded.
+\item System displays main application screen.
 \end{enumerate}
 
 \item No internet connection is available.
