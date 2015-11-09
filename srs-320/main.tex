@@ -878,7 +878,7 @@ TEST PLAN}
 
 \subsection{TESTING STRATEGY}
 {\selectlanguage{english}\rmfamily\color{black}
-        The strategy for testing the softwares data entry, browsing and search, and delayed update features is a combination of automatic and manual tests.  The components deemed untestable by user interaction will be tested automatically by a set of custom scripts.  The components that involve user interaction will be tested manually by testers and developers.}
+        The strategy for testing the softwares data entry, browsing and search, and delayed update features is a combination of automation testing and manual testing. Functional requirements of the listed features are to be tested by using automation testing. Manual testing will only be used for features that may not be testable by automation. Certain components of these features may involve more intensive interaction between the tablet and the user and these components will need validation by testers and developers.}
         
 \subsection{SCOPE}
 {\selectlanguage{english}\rmfamily\color{black}
@@ -893,19 +893,19 @@ Test cases will cover all the features of the software covered in the SRS.  It w
 \begin{center}
 \begin{tabular}{ | M{1.5cm} | M{1.75cm}| M{13cm} |} 
 \hline
-\textbf{TEST ID} & \textbf{SRS \ Document \ Reference} & \textbf{Features to be Tested (Test Description)}\\ 
+\textbf{TEST ID} & \textbf{SRS \ Document \ Reference} & \textbf{Features To Be Tested (Test Description)}\\ 
 \hline
-001 & 3.1a & Validate the data entry form feature for septic tanks. Tests cases will ensure that the user is able to input and upload the form in the expected manner.  Test cases will also test for exceptions: 1) User misses a required  entry, 2) User inputs invalid entry 3) System shutdown during data upload.\\ 
+001 & 5.1.1 & Validate the data entry form feature for septic tanks. Test cases will ensure that the user is able to input and upload the form in the expected manner.  Test cases will also test for exceptions: 1) User misses a required  entry, 2) User inputs invalid entry 3) System shutdown during data upload.\\ 
 \hline
-002 & 3.1b & Validate the data entry form feature for water well. Tests cases will ensure that the user is able to input and upload the form in the expected manner.  Test cases will also test for exceptions: 1) User misses a required  entry, 2) User inputs invalid entry 3) System shutdown during data upload. \\ 
+002 & 5.1.2 & Validate the data entry form feature for water well. Test cases will ensure that the user is able to input and upload the form in the expected manner.  Test cases will also test for exceptions: 1) User misses a required  entry, 2) User inputs invalid entry 3) System shutdown during data upload. \\ 
 \hline
-003 & 3.1c & Validate the data entry form feature for restaurant inspections. Tests cases will ensure that the user is able to input and upload the form in the expected manner.  Test cases will also test for exceptions: 1) User misses a required  entry, 2) User inputs invalid entry 3) System shutdown during data upload. \\ 
+003 & 5.1.3 & Validate the data entry form feature for restaurant inspections. Test cases will ensure that the user is able to input and upload the form in the expected manner.  Test cases will also test for exceptions: 1) User misses a required  entry, 2) User inputs invalid entry 3) System shutdown during data upload. \\ 
 \hline
-004 & 3.2 & Validate the browsing and search functions. Test cases will include scenarios for software not able to connect to database and search query yielding no results.\\ 
+004 & 5.2 & Validate the browsing and search functions. Test cases will include scenarios for software not able to connect to database and search query yielding no results.\\ 
 \hline
-005 & 3.3a & Validate the delayed upload feature for specific form selected by user.  Test cases will include tests for exceptional scenarios covered in SRS to ensure that the software behaves in an expected manner.\\ 
+005 & 5.3.1 & Validate the delayed upload feature for specific form selected by user.  Test cases will include tests for exceptional scenarios covered in SRS to ensure that the software behaves in an expected manner.\\ 
 \hline
-006 & 3.3b & Validate the batch delayed upload feature.  Test cases will include tests for exceptional scenarios covered in SRS to ensure that the software behaves in an expected manner.\\ 
+006 & 5.3.2 & Validate the batch delayed upload feature.  Test cases will include tests for exceptional scenarios covered in SRS to ensure that the software behaves in an expected manner.\\ 
 \hline
 \end{tabular}
 \end{center}
@@ -915,9 +915,9 @@ Test cases will cover all the features of the software covered in the SRS.  It w
 \begin{center}
 \begin{tabular}{ | M{4cm} | M{12cm}| } 
 \hline
-\textbf{Component Testing} & Individuals will test the components they are working on during the software development cycle.\\ 
+\textbf{Component Testing} & Components will be tested by test cases to ensure they are working during the software development cycle.\\ 
 \hline
-\textbf{Integration Testing} & A detailed set of tests cases will be created and then executed.  These test cases will cover all the requirements detailed in the SRS.\\ 
+\textbf{Integration Testing} & A detailed set of test cases will be created and then executed.  These test cases will cover all the requirements detailed in the SRS.\\ 
 \hline
 \textbf{Interface Testing} & To ensure that all aspects of the display are rendered correctly, the external interfaces regarding data entry forms and browsing and searching will be tested manually by using the user interface to perform all product tasks.\\ 
 \hline
@@ -946,17 +946,17 @@ Test cases will cover all the features of the software covered in the SRS.  It w
 \begin{center}
 \begin{tabular}{ | M{5cm} | M{5cm}| } 
 \hline
-\textbf{Task} & \textbf{Week Performed}\\ 
+\textbf{Task} & \textbf{Duration}\\ 
 \hline
-Develop test cases & 6 \\ 
+Develop test cases & 11/12 - 11/24 \\ 
 \hline
-Develop scripts for automated testing & 4 \\ 
+Develop scripts for automated testing & 11/24 - 12/3 \\ 
 \hline
-Execute tests & 8 \\ 
+Execute tests & 12/3 - 12/8 \\ 
 \hline
-Report defects & 6 \\ 
+Report defects & 12/3 - 12/8 \\ 
 \hline
-Complete test report & 8 \\ 
+Complete test report & 12/8 - 12/11 \\ 
 \hline
 \end{tabular}
 \end{center}
