@@ -609,6 +609,67 @@ DATA ENTRY (FORMS)}
 \end{enumerate}
 \end{enumerate}
 
+
+\subsubsection{\textit{Use Case 4}} 
+
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Enter new restaurant for use by inspection form}
+
+{\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
+
+{\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
+
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects restaurant inspection form.}
+
+{\selectlanguage{english}\color{black} \textit{Precondition:} Successfully logged in and accessed the form entry user interface for restaurant inspection.}
+
+{\selectlanguage{english}\color{black} \textit{Postcondition:}  Filling out restaurant form now has option to select this new restaurant}
+\newline
+
+{\selectlanguage{english}\color{black} \textit{Main Scenario:}}
+\begin{enumerate}
+\item The page for restaurant inspection form is shown.
+
+\item User selects "add new restaurant" option, which resides next to "restaurant name" field
+
+\item System redirects user to "new restaurant" form
+
+\item User enters restaurant information; includes name, address, owner, etc.
+
+\item User hits submit button after all fields have been entered
+
+\item System redirects User back to restaurant inspection page
+
+\item User has option to select the new restaurant from list of restaurants under "restaurant name"
+
+\end{enumerate}
+
+{\selectlanguage{english}\color{black} \textit{Exception Scenarios:}}
+\begin{enumerate}
+\item User forgets to enter information in 'required field'.
+\begin{enumerate}
+\item System notifies user of empty fields and does not submit.
+\item User presented with partially filled out form and goes back to step 3.
+\end{enumerate}
+
+\item User enters an invalid form entry.
+\begin{enumerate}
+\item System displays invalid form entry and does not submit.
+\item User presented with partially filled out form and goes back to step 3.
+\end{enumerate}
+
+\item System shuts down during data submission.
+\begin{enumerate}
+\item System shows user whether or not data was submitted successfully.
+\end{enumerate}
+
+\item User cancels form entry.
+\begin{enumerate}
+\item User selects cancel option.
+\item System confirms with user that they selected cancel.
+\item System redirects User back to restaurant inspection form page.
+\end{enumerate}
+\end{enumerate}
+
 \subsection[BROWSING \& SEARCH]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 BROWSING \& SEARCH}
 
