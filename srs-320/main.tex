@@ -501,15 +501,15 @@ DATA ENTRY (FORMS)}
 
 \subsubsection{\textit{Use Case 2}} 
 
-\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Fill out well water inspection form}
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Fill out well water data form}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} System}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects well water inspection form.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects well water data form.}
 
-{\selectlanguage{english}\color{black} \textit{Precondition:} Successfully logged in and accessed the form entry user interface for water well inspection.}
+{\selectlanguage{english}\color{black} \textit{Precondition:} Successfully logged in and accessed the form entry user interface for water wells.}
 
 {\selectlanguage{english}\color{black} \textit{Postcondition:}  Data is stored to be submitted to a central database}
 \newline
@@ -612,7 +612,7 @@ DATA ENTRY (FORMS)}
 
 \subsubsection{\textit{Use Case 4}} 
 
-\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Enter new restaurant for use by inspection form}
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Enter new restaurant inspection form}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
 
@@ -629,17 +629,17 @@ DATA ENTRY (FORMS)}
 \begin{enumerate}
 \item The page for restaurant inspection form is shown.
 
-\item User selects "add new restaurant" option, which resides next to "restaurant name" field
+\item User selects "add new restaurant" option, which resides next to "restaurant name" field.
 
-\item System redirects user to "new restaurant" form
+\item System redirects user to "new restaurant" form.
 
 \item User enters restaurant information; includes name, address, owner, etc.
 
-\item User hits submit button after all fields have been entered
+\item User hits submit button after all fields have been entered.
 
-\item System redirects User back to restaurant inspection page
+\item System redirects User back to restaurant inspection page.
 
-\item User has option to select the new restaurant from list of restaurants under "restaurant name"
+\item User has option to select the new restaurant from list of restaurants under "restaurant name".
 
 \end{enumerate}
 
@@ -675,7 +675,7 @@ BROWSING \& SEARCH}
 
 \subsubsection{\textit{Use Case 1}}
 
-\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Search for prior inspection report}
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black} Search for prior report}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} User}
 
@@ -683,30 +683,30 @@ BROWSING \& SEARCH}
 
 {\selectlanguage{english}\color{black} \textit{Trigger:} User wants to search for a list of inspection reports matching an entered keyword.}
 
-{\selectlanguage{english}\color{black} \textit{Preconditions:} User has logged in and is on the inital lookup report screen which contains a list of all inspection reports.}
+{\selectlanguage{english}\color{black} \textit{Preconditions:} User has logged in and is on the initial lookup report screen which contains a list of all reports.}
 
 {\selectlanguage{english}\color{black} \textit{Postcondition:} System displays list of prior reports matching search term.}
 \newline
 
 {\selectlanguage{english}\color{black} \textit{Main Scenario:}}
 \begin{enumerate}
-\item User enters a keyword to search
-\item System queries external database with location and retrieves records that contain the keyword
-\item System displays a list of retrieved records and their dates, sorted by date
+\item User enters a keyword to search.
+\item System queries external database with location and retrieves records that contain the keyword.
+\item System displays a list of retrieved records and their dates, sorted by date.
 \end{enumerate}
 
 {\selectlanguage{english}\color{black} \textit{Exception Scenarios:}}
 \begin{enumerate}
-\item System cannot connect to database
+\item System cannot connect to database.
 \begin{enumerate}
-\item Screen displays connection error message and asks user to try again later
-\item User selects 'Ok' button and system returns to the lookup report screen
+\item Screen displays connection error message and asks user to try again later.
+\item User selects 'Ok' button and system returns to the lookup report screen.
 \end{enumerate}
 
-\item None of the records match the search keyword
+\item None of the records match the search keyword.
 \begin{enumerate}
-\item Display message, ''No reports match the specified keyword''
-\item User clicks 'Ok' and returns to the initial lookup report screen
+\item Display message, ''No reports match the specified keyword''.
+\item User clicks 'Ok' and returns to the initial lookup report screen.
 \end{enumerate}
 \end{enumerate}
 
@@ -726,22 +726,22 @@ BROWSING \& SEARCH}
 \newline
 {\selectlanguage{english}\color{black} \textit{Main Scenario:}}\
 \begin{enumerate}
-\item User selects criteria to narrow down all the inspection reports
-\item System queries external database with location and retrieves records that match the criteria
-\item System displays a list of retrieved records and their dates, sorted by date
+\item User selects criteria to narrow down all the inspection reports.
+\item System queries external database with location and retrieves records that match the criteria.
+\item System displays a list of retrieved records and their dates, sorted by date.
 \end{enumerate}
 {\selectlanguage{english}\color{black} \textit{Exception Scenarios:}}
 \begin{enumerate}
-\item System cannot connect to database
+\item System cannot connect to database.
 \begin{enumerate}
-\item Screen displays connection error message and asks user to try again later
-\item User selects 'Ok' button and system returns to the lookup report screen
+\item Screen displays connection error message and asks user to try again later.
+\item User selects 'Ok' button and system returns to the lookup report screen.
 \end{enumerate}
 
-\item None of the records match the search keyword
+\item None of the records match the search keyword.
 \begin{enumerate}
-\item Display message, ''No reports matching that criteria''
-\item User clicks 'Ok' and returns to the initial lookup report screen
+\item Display message, ''No reports matching that criteria''.
+\item User clicks 'Ok' and returns to the initial lookup report screen.
 \end{enumerate}
 \end{enumerate}
 
@@ -761,16 +761,16 @@ BROWSING \& SEARCH}
 \newline
 {\selectlanguage{english}\color{black} \textit{Main Scenario:}}\
 \begin{enumerate}
-\item User selects an inspection report
-\item System displays all data contained in the selected inspection report
+\item User selects an inspection report.
+\item System displays all data contained in the selected inspection report.
 \end{enumerate}
 {\selectlanguage{english}\color{black} \textit{Exception Scenario:}}
 
 \begin{description}
-\item System cannot connect to database
+\item System cannot connect to database.
 \begin{enumerate}
-\item Screen displays connection error message and asks user to try again later
-\item User selects 'Ok' button and system returns to the lookup report screen
+\item Screen displays connection error message and asks user to try again later.
+\item User selects 'Ok' button and system returns to the lookup report screen.
 \end{enumerate}
 \end{description}
 
@@ -850,7 +850,7 @@ specifies which fields in the form data are unacceptable and asks that they be f
 \item No internet connection is available.
 \begin{enumerate}
 \item System notifies the user that internet connection is not available and to try again once they are within access range.
-\item User is returned to the form's viewing page
+\item User is returned to the form's viewing page.
 \end{enumerate}
 \end{enumerate}
 
@@ -914,7 +914,7 @@ specifies which fields in the form data are unacceptable and asks that they be f
 \item User is returned to the main page.
 \end{enumerate}
 
-\item Some form data is not acceptable to be uploaded to the database
+\item Some form data is not acceptable to be uploaded to the database.
 \begin{enumerate}
 \item Any data that is not acceptable is removed from the list of data to be uploaded. After batch upload is finished, a notification is sent with a list of any data unacceptable to be uploaded.
 \item System displays main application screen.
@@ -937,7 +937,7 @@ specifies which fields in the form data are unacceptable and asks that they be f
 DATA MODELING}
 \subsection{DATA DESCRIPTION}
 {\selectlanguage{english}\rmfamily\color{black}
-Data from three six objects and their respective fields are collected from the user and stored in the database.  Objects are searched using fields.  Search results in data in the form of objects being output from the database.}
+Data from three objects and their respective fields are collected from the user and stored in the database.  Objects are searched using fields.  Search results in data in the form of objects being output from the database.}
 
 \begin{figure}[H]
 \centering
@@ -1060,7 +1060,7 @@ Complete test report & 12/8 - 12/11 \\
 \item{Support for revised data objects upon regulation revisions}
 \end{itemize}
 {\selectlanguage{english}\rmfamily\color{black}
-Software is currently localized to two specific towns.  The application can be extended to cover more towns and locations in the future. They system can also be revised to support additional data objects (eg. swimming pool inspections, summer camp facilities, housing regulations reports). It can also be modified to add or update revised regulations as they come out.
+This software is currently localized to two specific towns.  The application can be extended to cover more towns and locations in the future. The system can also be revised to support additional data objects (eg. swimming pool inspections, summer camp facilities, housing regulations reports). It can also be modified to add or update revised regulations as they come out.
 Search and browse functions in the software currently support keypad and mouse/finger interface but future extensions could include a user voice interface as well. 
 Software can be extended to possibly include full support as a smartwatch application. 
 Software currently supports Android OS. It can support other operating systems in the future.}
@@ -1073,8 +1073,7 @@ APPENDIX A. \ Example Screens}
 
 {\selectlanguage{english}\itshape\color{black}
 Include copies of specifications, mockups, prototypes, etc. supplied or
-derived from the customer. \ Appendices are labeled A, B, {\dots}n.
-\ \ Reference each appendix as appropriate in the text of the document.
+derived from the customer. 
 }
 
 {\selectlanguage{english}\color{black}
