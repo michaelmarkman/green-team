@@ -134,11 +134,11 @@ SOFTWARE REQUIREMENTS SPECIFICATION (SRS) FOR
 \bigskip
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-Version 1.0
+Version 2.0
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-October 22, 2015
+November 9, 2015
 \par}
 
 
@@ -210,62 +210,76 @@ INTRODUCTION}
 \subsection[PURPOSE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 PURPOSE}
 {\selectlanguage{english}\rmfamily\color{black}
-Convert current, physical method of archiving Board of Health data from restaurant inspections, well water quality tests, and septic tank inspections to a new, digital method.This document provides a high level overview of the entire system then goes into detail on the tablet applications form entry, browsing and search, and delayed upload.
+Replace the current physical method of archiving Board of Health data from restaurant inspections, well-water quality reports, and septic tank pumping reports with a new digital method. This document provides a high-level overview of the entire system before going into detail on the tablet application portion's form entry, browsing and search, and delayed upload functionality.
 }
 
 
-\subsection[DOCUMENT CONVENTIONS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-DOCUMENT CONVENTIONS}
-{\selectlanguage{english}\rmfamily\color{black}
-WRITE HERE}
-
+% \subsection[DOCUMENT CONVENTIONS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+% DOCUMENT CONVENTIONS}
+% {\selectlanguage{english}\rmfamily\color{black}
+% Nothing needed here yet.}
 
 \subsection[PRODUCT SCOPE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SCOPE}
 {\selectlanguage{english}\rmfamily\color{black}
-This project contains multiple sub-projects and systems. 
+This project includes multiple sub-projects and systems. 
 \\     \\
-This new digital method requires a database to hold different types of inspection forms (restaurant, water well, septic tank). The database will be searchable and sortable by keywords or established parameters thus improving accessibility and simplifying analysis. Storing this data digitally will allow the customer to better analyze patterns and create a more permanent location for the data to reside. It will act as an intuitive tool to help the inspector utilize and access data in the future. To increase usability of this database, a user interface must be created to provide access and retrieval of information. This application will focus on usability of the database and a later described portion will focus on portability, thus one can think of this application as residing in an office environment. The application should include a convenient and easy method to search, sort, and analyze data from the restaurant inspections, well water quality reports, and septic tank inspections. Septic tank and well water quality inspection data should also be viewable on a geographical map with the ability to show change over time. This will illuminate differences and trends in the data that may help explain and predict the cause of said trends. The cataloguing of restaurant health inspection data could be facilitated by a form on a portable application (i.e. mobile, tablet). This portable application should be designed to locally store the inputted data and convert it to a form readable by the database so it can add the report to the rest of the database when connected. Overall, creating and structuring this database for the customer and providing easy-to-use tools for accessing it, will assist him in his inspections and simplify the retrieval of key information the customer might be interested in at a later date.
+This new digital method requires a database to hold different types of inspection results and reports, including data on restaurants, well-water quality, and septic tanks. The database must be searchable and sortable by keywords or established parameters, thus improving accessibility and simplifying data analysis. Storing this data digitally will allow the customer to better analyze patterns and create a more accessible and interactive location for the data to reside. It will act as an intuitive tool to help the inspector use and access data in the future. To access this database, a user interface must be created to provide fast access and retrieval of information. This application focus on usability, with a sub-portion designed for portability. This application is meant to be used specifically in a municipality's Board of Health office environment. The application will include a convenient and easy method to search, sort, and analyze data from the restaurant inspections, well-water quality reports, and septic tank pumping reports. Septic tank and well-water quality data should also be viewable on a geographical map with the ability to show changes over time. This will illuminate differences and trends in the data that may help explain and predict them. The cataloging of restaurant health inspection data could be facilitated by a form on a portable application (i.e. mobile, tablet). This portable application should be designed to locally store the entered data and convert it to a form readable by the database so it can add the record to the rest of the database when connected.
+\\     \\ 
+Overall, creating and structuring a database for storing various health data, and providing easy-to-use tools for accessing it, will assist the customer in his inspections and simplify the retrieval of key information he may find interest in at a later date.
 \subsubsection{Sub Projects}
 \begin{itemize}
 \item{Central Database}
-\item{Form Application for Tablet}
-\item{Application}
+\item{Form Entry Application for Tablet}
+\item{Desktop Application}
 \end{itemize}
 \textit{Central Database:}
 \newline 
 
-A central database with consistent access to data will create the integrity of the entire system. The three distinct data entities identified were: Well water inspections, septic tank inspections, and restaurant inspections, which will all need to contain location to differentiate towns. The attributes of the models will correspond to the required fields that the customer must fill in on their forms during inspections. The data for the restaurant inspections shall contain all fields that can be found on the restaurant inspection form. The data for water inspections must contain all of the relevant fields, such as water quality, measurements, address of water well, flow rate, name of the company that drilled the well, and the permit and lot number. Similarly, the data for the septic inspection will hold information such as the address, lot number, size, capacity, condition of the tank, date of last inspection, and quality of gallons pumped in and out.  The type of data stored must be able to be changed in the event of new legislation.
+A central database with constant access to data will ensure the integrity of the entire system. The three distinct data entities identified were: Well-water quality reports, septic system pumping reports, and restaurant inspections, which will all need to be differentiated by town. The attributes of the models will correspond to the required fields that the customer must enter during inspections. The data for the restaurant inspections shall contain all fields that can be found on the restaurant inspection form. The data for well reports must contain all of the relevant fields, such as water quality, measurements, address of water well, flow rate, name of the company that drilled the well, and the permit and lot number. Similarly, the data for the septic pumping report will hold information such as the address, lot number, size, capacity, condition of the tank, date of last inspection, and quality of gallons pumped in and out.  The type of data stored must be able to be changed in the event of new legislation.
 \newline
 
-The two features existing in the database include a basic database that provides basic queries to GET, POST, PUT, and DELETE records safely and securely. The other feature is to create and design a federated database.
+The first of two sub-projects for creating this database are to create a basic database that provides basic queries, such as: creating, reading, editing, and deleting records safely and securely. The second sub-project is to create and design a method to federate the database so that other portions are able to access the database structure.
 \\  \\
-\textit{Form Application for a Tablet:}
+\textit{Form Entry Application for Tablet:}
 \newline
 
-This application will be focused on usability in attempt to make it as simple as possible to enter form data. The application will be able to store data locally on the device followed by having the ability to upload to the office-based application noted (i.e. desktop application or web -application). This app will replicate the forms that the customer requires for every inspection For security reasons, the app will have a login screen for user authentication. This application will be able to either send the document to a printer or email it on the spot as well as being able to receive an e-signature. The application should allow the user to view contextual information based on data that is associated with the users current task. For example, when the user is going to inspect a restaurant, they should be shown previous inspection results. 
+This application will be focused on usability in order to make it as simple as possible to enter the data. The application will be able to store data locally on the device; and the ability to upload to the office-based application noted (e.g. desktop application or web-application). This app will replace the forms that the customer requires for every inspection by including fields for all relevant information. For security purposes, the app will have a log-in screen for user authentication. This application will be able to either send the document to a printer or email it on the spot, as well as be able to receive an e-signature. The application should allow the user to view relevant information based on data that is associated with the user's current task that has been submitted previously. For example, when the user is going to inspect a restaurant, they should be shown previous inspection results from that restaurant. 
 \newline
+\newline
+The tablet application will have the following main sections that correspond with the functionality above: 
+\begin{itemize}
+\item{Data Entry with a user interface that allows for dynamic flow through the inspection process.}
+\item{Geographic Information System (GIS) to locate well, septic, and restaurant locations.}
+\item{Browsing and search of data in order to review previously entered reports for analysis purposes.}
+\item{User authentication to verify identity of the user.}
+\item{Form printing in order to leave any necessary paperwork after an inspection.}
+\item{Delayed upload to save and move data without needing constant internet access}
 
-The form application will have the following main areas that correspond with the functionality above. User authentication as stated. Data entry as stated where the user interface allows the inspector to flow through the inspection process dynamically. Data entry (GIS) is required in order to locate well, septic, and restaurant location. Form printing is another important point as a physical copy of a restaurant inspection will most likely be required to provide to the restaurant owner. Browsing and search is also a feature of the application which includes pulling up relevant data of a current restaurant. The final important feature is the ability for delayed upload. This will allow the tablet to flow data into the central database that communicates with the main application on the web.
-\\ \\
+\end{itemize}
 \textit{Application (Usable, Connected to Database):}
 \newline
 
-An application will be created for viewing all past records stored in the database. The application should include three different sections for restaurant, water and septic.  The application will need to communicate with the central databases containing all information of past record. The site will provide an interface for querying data, including searching by location or violation. The application will contain user authentication that, once validated for an administrator, will allow for the submission of new records. Without login credentials, the information is read-only. The site will use the accepted regulation form as a base to record data from a new restaurant, water, or septic inspection and then send this new data to the relevant database. Additional functionality including mapping is mentioned next.
+An application will be created for viewing all past records stored in the database. The application should include three different sections for restaurant, wells, and septic systems.  The application will need to communicate with the central database containing all information of past records. The application will provide an interface for querying data, including searching by location or violation. The application will contain user authentication that, once validated as an administrator, will allow for the submission of new records. Without log-in credentials, the information will be visible, but immutable. The application will use the accepted regulation forms as a base to record data from new restaurant inspection, water, or septic system reports and then send this new data to the relevant database. Additional functionality of this application includes:
 \newline 
-
-Features described have included user authentication, data entry for eligible users, reporting and search as well as mapping. The reporting and search will include the ability to retrieve a general summary of 1 of 3 sections (restuarants, wells, septic tanks) that will be able to be downloaded and printed for use in a physical report. The application will also include data mapping. This map will contain points of location of wells, septic tanks, and restaurants which can then be queried and visualized. }
+\begin{itemize}
+\item{Reporting and search that includes many enter-able parameters to view and categorize reports}
+\item{User authentication so that inspectors can add report data and constituents may view public records.}
+\item{Data mapping to view data in relation to maps of corresponding towns.}
+\item{Printing of reports or search results for when physical copies are desired.}
+\end{itemize}
+}
 
 \subsection[INTENDED AUDIENCE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 INTENDED AUDIENCE}
 {\selectlanguage{english}\rmfamily\color{black}
-    The intended audience is for health inspectors who want to use a digital alternative to record and store information as an alternative to physical methods. The primary audience will be the health inspector of the town of Leverett and Sunderland Massachusetts.}
+    This system is intended for health inspectors who want to use a digital alternative to record and store information as opposed to paper storage. Specifically, the system is being made for the health inspector of the towns of Leverett and Sunderland, Massachusetts.}
 
 \subsection[DEFINITIONS, ACRONYMS, AND
 ABBREVIATIONS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 DEFINITIONS, ACRONYMS, AND ABBREVIATIONS}
 {\selectlanguage{english}\rmfamily\color{black}
-The products name is Health.e standing for Health electronics as it is designed to digitize information on health inspections, well water and septic tanks.}
+The product's name is Health.e standing for Health Electronics, as it is designed to digitize information on health inspections, well water and septic tanks.}
 \newline
 \begin{flushleft}
 \tablehead{}
@@ -275,42 +289,13 @@ The products name is Health.e standing for Health electronics as it is designed 
 Acronym &
 \centering\arraybslash \selectlanguage{english}\bfseries\color{black}
 Definition\\\hline
-\selectlanguage{english}\color{black} Alpha test &
-\selectlanguage{english}\color{black} Limited release(s) to selected,
-outside testers\\\hline
-\selectlanguage{english}\color{black} Beta test &
-\selectlanguage{english}\color{black} Limited release(s) to cooperating
-customers wanting early access to developing systems\\\hline
-\selectlanguage{english}\color{black} Final test &
-\selectlanguage{english}\color{black} aka, Acceptance test, release of
-full functionality to customer for approval\\\hline
 \selectlanguage{english}\color{black} DFD &
 \selectlanguage{english}\color{black} Data Flow Diagram\\\hline
-\selectlanguage{english}\color{black} SDD &
-\selectlanguage{english}\color{black} Software Design Document, aka SDS,
-Software Design Specification\\\hline
 \selectlanguage{english}\color{black} SRS &
 \selectlanguage{english}\color{black} Software Requirements
 Specification\\\hline
-\selectlanguage{english}\color{black} SSRS &
-\selectlanguage{english}\color{black} System and Software Requirements
-Specification\\\hline
-~
- &
-~
-\\\hline
-~
- &
-~
-\\\hline
-~
- &
-~
-\\\hline
-~
- &
-~
-\\\hline
+\selectlanguage{english}\color{black} GIS &
+\selectlanguage{english}\color{black} Geographic Information System\\\hline
 \end{supertabular}
 \end{flushleft}
 
@@ -340,7 +325,7 @@ The form entry, browsing and search, and delayed upload functionalities are all 
 \subsection[PRODUCT
 FUNCTIONS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 PRODUCT FUNCTIONS}
-\subsubsection{Data Entry (Form)}
+\subsubsection{Data Entry (Forms)}
 \begin{enumerate}
 \item{The user chooses one of the following inspection forms to fill in: restaurant, septic tank, or water well.}
 \item{The tablet then displays the chosen form to the user with blank, fillable forms.}
@@ -370,7 +355,7 @@ The form entry, browsing and search, and delayed upload aspects of this project 
 
 \subsection[CONSTRAINTS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 CONSTRAINTS}
-\subsubsection{Data Entry (Form)}
+\subsubsection{Data Entry (Forms)}
 {\selectlanguage{english}\color{black}
 The form entry itself is primarily based on inspection forms created by the state and used by the town. There must be an entry field for each piece of data corresponding to the required sections of the current inspection forms. Also, there will be a finite number of form entries the user can generate on the tablet since the tablet will have a limited amount of memory space. With recent tablet device improvements, the chances of filling up the memory on the tablet is low. With a good design of the entire project, modern day memory capacities will suffice to hold the data required.}
 
@@ -389,7 +374,7 @@ There will be a GitHub Wiki that will help guide the user through all of the bas
 
 \subsection[ASSUMPTIONS \& DEPENDENCIES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 ASSUMPTIONS \& DEPENDENCIES}
-\subsubsection{Data Entry (Form)}
+\subsubsection{Data Entry (Forms)}
 Our implementation of the form entry on the tablet app depends on how the central database is constructed. Each field that the database contains for each type of form must be represented in the UI of the tablet app so that the health inspector may enter all of the fields correctly. The assumption here being that any changes made to the physical forms will be updated accordingly in the database, and thus updated in the digital forms as well. 
 \subsubsection{Browsing \& Search}
 Our implementation of browsing and search on the tablet app relies on an internal database that holds previous records. We assume that the internal database is synced with the main database, so that the files being searched for can be found within the tablet. There is a possibility that files that have been removed from the tablet may be searched for, but such a case will be handled by a file not found message. 
@@ -434,24 +419,21 @@ The application will be able to wirelessly sync with the database. This feature 
 \subsubsection{USB Communication}
 The application will be able to sync through a usb cable with the database. This hard wire connection will provide full autonomy for the customer to upload specific forms to the web application. The USB connection will also be able to read from the computer in order to update attributes on the tablets local database.}
 
-\clearpage\section[NONFUNCTIONAL REQUIREMENTS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-NONFUNCTIONAL REQUIREMENTS}
+\clearpage\section[NON-FUNCTIONAL REQUIREMENTS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+NON-FUNCTIONAL REQUIREMENTS}
 {\selectlanguage{english}\rmfamily\color{black}
 
+\subsection{SOFTWARE QUALITY ATTRIBUTES}
+The most important aspect of the final product is that it must be extremely user-friendly. Operating the software should be a simple and intuitive process. A new user should be able to learn how to operate the software very quickly. Learning how to use this software is not the job, but the tool to accomplishing the job easily and effectively.
+
 \subsection{PERFORMANCE REQUIREMENTS}
-For the tablet application, the user expects to experience appropriate speed performance. The focus here is browsing and searching. Getting information from the database should never operate at a speed that will keep the user waiting. 
+The software must operate efficiently enough such that it does not cause delay during an inspection. Operation of the software should be quick and responsive in order to satisfy the user's needs.
 
 \subsection{SAFETY REQUIREMENTS}
-When it comes to the tablet applications ability to do delayed uploading, safety becomes a factor. Its essential that the data entered on site with the tablet is properly indexed and saved. The tablet must make it back to the users desktop without any loss of this data. 
+We must operate under the assumption that the application may be offline for some amount of time. During this time, all data saved on the tablet must remain organized and secure. During any instance of Delayed Upload, data must remain intact and the connection must be secure such that no corruptions or issues arise.
 
 \subsection{SECURITY REQUIREMENTS}
-Its vital that data entry is allowed only to authorized users. User authentication should take care of this, and only let administrators actually enter information into the database. However, we shouldn't have worry about browsing and search, as anyone can use the feature because the information is public.
-
-\subsection{SOFTWRE QUALITY ATTRIBUTES}
-The biggest goal here is that the tablet application is extremely user friendly. From what we know, the client who is going to be using the application is not tech-savvy. Between the user interface and functionality, the highlight must be that the user can easily learn how to use the application effectively.
-
-\subsection{BUSINESS ROLES}
-Any user with access to the tablet application can do browsing and searching for information on the wells, septic systems and restaurants. All of this information is public. However, only a registered administrator is allowed to access the form entry and delayed upload features. They are the sole owners of the ability to add new information.}
+It is vital that data entry is only accessible to authorized users. User authentication should ensure that only administrators can enter information into the database. While the data on the tablet will eventually become open to the public, this part of the application should be restricted to inspectors.}
 
 \clearpage\section[FUNCTIONAL REQUIREMENTS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 FUNCTIONAL REQUIREMENTS}
@@ -477,7 +459,7 @@ DATA ENTRY (FORMS)}
 \begin{enumerate}
 \item System presents modifiable septic tank information form.
 
-\item User fills out each required field of the form.
+\item User fills out fields on the form.
 
 \item User submits the form on tablet.
 
@@ -494,19 +476,27 @@ DATA ENTRY (FORMS)}
 \begin{enumerate}
 \item User forgets to enter information in 'required field'.
 \begin{enumerate}
-\item System notifies user of empty fields and does not submit.
+\item System notifies user of empty fields and goes back to step 2.
 \end{enumerate}
 
 \item User enters an invalid form entry.
 \begin{enumerate}
-\item System displays invalid form entry and does not submit.
+\item System displays invalid form entry and goes back to step 2.
 \end{enumerate}
 
 \item System shuts down during data submission.
 \begin{enumerate}
 \item System can show user whether or not data was submitted successfully. 
 \end{enumerate}
+
+\item User cancels form entry.
+\begin{enumerate}
+\item User selects cancel option.
+\item System confirms with user that they selected cancel.
+\item System displays main application screen.
 \end{enumerate}
+\end{enumerate}
+
 
 \subsubsection{\textit{Use Case 2}} 
 
@@ -527,7 +517,7 @@ DATA ENTRY (FORMS)}
 \begin{enumerate}
 \item System presents modifiable well water information form.
 
-\item User fills out each \textit{required} field of the form.
+\item User fills out fields on the form.
 
 \item User submits the form on tablet.
 
@@ -545,18 +535,25 @@ DATA ENTRY (FORMS)}
 \item User forgets to enter information in 'required field'.
 \begin{enumerate}
 \item System notifies user of empty fields and does not submit.
-\item User presented with partially filled out form.
+\item User presented with partially filled out form and goes back to step 2.
 \end{enumerate}
 
 \item User enters an invalid form entry.
 \begin{enumerate}
 \item System displays invalid form entry and does not submit.
-\item User presented with partially filled out form.
+\item User presented with partially filled out form and goes back to step 2.
 \end{enumerate}
 
 \item System shuts down during data submission.
 \begin{enumerate}
 \item System shows user whether or not data was submitted successfully.
+\end{enumerate}
+
+\item User cancels form entry.
+\begin{enumerate}
+\item User selects cancel option.
+\item System confirms with user that they selected cancel.
+\item System displays main application screen.
 \end{enumerate}
 \end{enumerate}
 
@@ -578,8 +575,8 @@ DATA ENTRY (FORMS)}
 {\selectlanguage{english}\color{black} \textit{Main Scenario:}}
 \begin{enumerate}
 \item The page for restaurant inspection form is shown.
-\item User records location and name of restaurant
-\item User fills out fields in form to record data form inspection
+\item User chooses restaurant.
+\item User fills out fields in form to record data from inspection.
 \item User clicks save button.
 \item Data is stored locally
 \end{enumerate}
@@ -589,18 +586,25 @@ DATA ENTRY (FORMS)}
 \item User forgets to enter information in 'required field'.
 \begin{enumerate}
 \item System notifies user of empty fields and does not submit.
-\item User presented with partially filled out form.
+\item User presented with partially filled out form and goes back to step 3..
 \end{enumerate}
 
 \item User enters an invalid form entry.
 \begin{enumerate}
 \item System displays invalid form entry and does not submit.
-\item User presented with partially filled out form.
+\item User presented with partially filled out form and goes back to step 3..
 \end{enumerate}
 
 \item System shuts down during data submission.
 \begin{enumerate}
 \item System shows user whether or not data was submitted successfully. 
+\end{enumerate}
+
+\item User cancels form entry.
+\begin{enumerate}
+\item User selects cancel option.
+\item System confirms with user that they selected cancel.
+\item System displays main application screen.
 \end{enumerate}
 \end{enumerate}
 
@@ -713,13 +717,13 @@ BROWSING \& SEARCH}
 DELAYED UPLOAD}
 \subsubsection{\textit{Use Case 1}}
 
-\textit{Title: }{\selectlanguage{english}\bfseries\color{black}User attempts to upload a specific piece of form data.}
+\textit{Title: }{\selectlanguage{english}\bfseries\color{black}User attempts to upload a record.}
 
 {\selectlanguage{english}\color{black} \textit{Primary Actor:} System}
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} User}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects  record/inspection to upload.}
 
 {\selectlanguage{english}\color{black} \textit{Precondition:}User has completed and saved some type of form data, and is associated with some online database. User is on the start page and has signed in successfully. Alternatively, User opts to send form data immediately after saving to device and begins at step 2.}
 
@@ -796,7 +800,7 @@ specifies which fields in the form data are unacceptable and asks that they be f
 
 {\selectlanguage{english}\color{black} \textit{Secondary Actor:} User, Databse}
 
-{\selectlanguage{english}\color{black} \textit{Trigger:} User selects septic inspection form to fill out.}
+{\selectlanguage{english}\color{black} \textit{Trigger:} User selects record/inspection to upload.}
 
 {\selectlanguage{english}\color{black} \textit{Precondition:}  User has completed and saved some type of form data, and the device is associated with some online database. User is on the start page and has signed in successfully. Alternatively, setting for automatic upload is on and System engages automatically, starting at step 2.}
 
@@ -851,6 +855,7 @@ specifies which fields in the form data are unacceptable and asks that they be f
 \item Some form data is not acceptable to be uploaded to the database
 \begin{enumerate}
 \item Any data that is not acceptable is removed from the list of data to be uploaded. After batch upload is finished, a notification is sent with a list of any data unacceptable to be uploaded.
+\item System displays main application screen.
 \end{enumerate}
 
 \item No internet connection is available.
@@ -866,8 +871,29 @@ specifies which fields in the form data are unacceptable and asks that they be f
 \end{enumerate}
 \end{enumerate}
 
-%\clearpage\section[DATA MODELING]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-%DATA MODELING}
+\clearpage\section[DATA MODELING]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+DATA MODELING}
+\subsection{DATA DESCRIPTION}
+{\selectlanguage{english}\rmfamily\color{black}
+Data from three six objects and their respective fields are collected from the user and stored in the database.  Objects are searched using fields.  Search results in data in the form of objects being output from the database.}
+
+\begin{figure}[H]
+\centering
+\renewcommand{\figurename}{DFD}
+\includegraphics[width=4in,height=3in]{Diagram2.png}
+\end{figure}
+
+\subsection{DATA OBJECTS}
+Three different data objects and their fields are stored in the database; septic inspection form, water well inspection form, and restaurant inspection forms.  Users use search object and its field to query the database.
+\begin{itemize}
+\item{Septic tank:}  Septic tank objects holds fields and data from septic tank inspection forms.  These objects are stored in the database and can retrieved using search options.
+
+\item{Water Well:} Water well object holds fields and data from water well inspection forms.  These objects are stored in the database and can retrieved using search options.
+
+\item{Restaurant:} Restaurant object holds fields and data from restaurant inspection forms.  These objects are stored in the database and can retrieved using search options.
+
+\item{Search:} Search object holds the fields entered by the user during search process.  Database matches the fields from the search object to the corresponding stored objects and fields to output the results.
+\end{itemize}
 
 \clearpage\section[TEST PLAN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 TEST PLAN}
@@ -989,16 +1015,6 @@ derived from the customer. \ Appendices are labeled A, B, {\dots}n.
 {\selectlanguage{english}\color{black}
 \foreignlanguage{english}{\ }\foreignlanguage{english}{[ insert appendix
 A here ]}}
-
-\clearpage\section[APPENDIX B. \ [insert name
-here{]}]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-APPENDIX B. \ [insert name here]}
-
-\bigskip
-
-{\selectlanguage{english}\color{black}
-[ insert appendix B here ]}
-
 
 \bigskip
 \end{document}
