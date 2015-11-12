@@ -233,10 +233,9 @@ The user should not have to have a second thought about delayed upload. That bei
 \clearpage\subsection[PROJECT OVERVIEW \& SCOPE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 PROJECT OVERVIEW \& SCOPE}
 {\selectlanguage{english}\rmfamily\color{black}
-The Health-e system is comprised of two main user components: a web app and a tablet app. For the sake of this design document, we will only be focusing on the tablet app portion of this system.
+The Health-e system is comprised of two main user components: a web app and a tablet app. For the sake of this design document, we will only be focusing on the tablet app portion of this system. Within this document, the terms user and health inspector will be interchangeable as they are one in the same for this project. The following are some definitions of common phrases that will be used in this document.
 }
 
-\newline
 \begin{flushleft}
 \tablehead{}
 \begin{supertabular}{|m{1.3587599in}|m{5.00806in}|}
@@ -245,15 +244,9 @@ The Health-e system is comprised of two main user components: a web app and a ta
 Acronym &
 \centering\arraybslash \selectlanguage{english}\bfseries\color{black}
 Definition\\\hline
-\selectlanguage{english}\color{black} Alpha test &
-\selectlanguage{english}\color{black} Limited release(s) to selected,
-outside testers\\\hline
-\selectlanguage{english}\color{black} Beta test &
-\selectlanguage{english}\color{black} Limited release(s) to cooperating
-customers wanting early access to developing systems\\\hline
-\selectlanguage{english}\color{black} Final test &
-\selectlanguage{english}\color{black} aka, Acceptance test, release of
-full functionality to customer for approval\\\hline
+\selectlanguage{english}\color{black} UML &
+\selectlanguage{english}\color{black} Unified Modeling Language\\\hline
+
 \selectlanguage{english}\color{black} DFD &
 \selectlanguage{english}\color{black} Data Flow Diagram\\\hline
 \selectlanguage{english}\color{black} SDD &
@@ -262,32 +255,10 @@ Software Design Specification\\\hline
 \selectlanguage{english}\color{black} SRS &
 \selectlanguage{english}\color{black} Software Requirements
 Specification\\\hline
-\selectlanguage{english}\color{black} SSRS &
-\selectlanguage{english}\color{black} System and Software Requirements
-Specification\\\hline
-~
- &
-~
-\\\hline
-~
- &
-~
-\\\hline
-~
- &
-~
-\\\hline
-~
- &
-~
-\\\hline
+
 \end{supertabular}
 \end{flushleft}
 
-% \subsection[REFERENCESS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-% REFERENCES}
-% {\selectlanguage{english}\itshape\color{black}
-% WRITE HERE}
 \subsubsection{Core features}
 {\selectlanguage{english}\rmfamily\color{black}
 The tablet app will include the following core features:
@@ -312,6 +283,7 @@ The tablet app will include the following core features:
 \item Allows the user to complete a search query using the search bar
 \item Displays search results in a scrolling list form that is easy to maneuver through
 \item Displays search results in a variety of orders depending on the user's specification
+\newline\newline
 \end{itemize}
 \item Form Printing
 \begin{itemize}
@@ -355,7 +327,17 @@ The main constraint for the Health-e project is time. There is approximately a m
 \subsection[INTENDED AUDIENCE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 INTENDED AUDIENCE}
 {\selectlanguage{english}\rmfamily\color{black}
-WRITE HERE}
+While the SRS document is intended for a more general audience, the purpose of this design document is to layout a visual template and functional flow of the final product and is thus intended for individuals who may be working directly on this product. This includes software engineers, project consultants, and team managers. 
+}
+
+\subsection[REFERENCES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+REFERENCES}
+{\selectlanguage{english}\rmfamily\color{black}
+Food Inspection Form: 
+\hyperref[]{https://people.cs.umass.edu/~ridgway/cmpsci320/customer/FoodInspectionForm.pdf}
+Septic Pumping Report can be found under "Title 5 Official Inspection Form" via this link: 
+\hyperref[]{http://www.mass.gov/eea/agencies/massdep/water/approvals/title-5-septic-system-forms.html}
+}
 
 
 \clearpage\section[DATA DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
