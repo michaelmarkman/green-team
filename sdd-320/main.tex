@@ -138,7 +138,7 @@ Version 1.0
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-November 8, 2015
+November 13, 2015
 \par}
 
 
@@ -207,8 +207,9 @@ Section\ \hfill  Page}
 \section[INTRODUCTION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 INTRODUCTION}
 The purpose of this software design document is to provide a low-level description of Health-e, providing insight into the structure and design of each component. In short, this document is meant to equip the reader with a concrete understanding of the inner workings of the Health-e system.
-\subsection[Goals and Objectives]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-GOALS AND OBJECTIVES}
+
+\subsection[GOALS \& OBJECTIVES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+GOALS \& OBJECTIVES}
 {\selectlanguage{english}\rmfamily\color{black}
 The purpose of Health-e is to replace the current physical method of archiving Board of Health data from restaurant inspections, well reports, and septic tank reports with a new, digital system. The intended user of the tablet aspect of this product is a health inspector who will be using the tablet to document or browse for data while on sight at an inspection. Accordingly, the final product must be quick, efficient, and easy to use. It must offer the appropriate features to the user without overwhelming them or requiring them to spend valuable time learning how to use said features. The user interface should be intuitive and easy to learn so that the system acts as a tool for the user, not something that slows them down while they are doing their job.
 }
@@ -229,8 +230,8 @@ Delayed Upload}
 The user should not have to have a second thought about delayed upload. That being said, the system must effectively notify the user of the current status of certain documents. Having an icon system that identifies documents on the tablet as being uploaded or in queue for delayed upload will allow the user to remain in the loop as far as the status of their documents in a simple, noninvasive manner.
 }
 
-\clearpage\subsection[Project Overview and Scope]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Project Overview and Scope}
+\clearpage\subsection[PROJECT OVERVIEW \& SCOPE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+PROJECT OVERVIEW \& SCOPE}
 {\selectlanguage{english}\rmfamily\color{black}
 The Health-e system is comprised of two main user components: a web app and a tablet app. For the sake of this design document, we will only be focusing on the tablet app portion of this system.
 }
@@ -339,89 +340,72 @@ Below are some features that are not guaranteed to be incorporated in the final 
 \end{enumerate}
 }
 
-\subsection[Software Context]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Software Context}
+\subsection[SOFTWARE CONTEXT]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+SOFTWARE CONTEXT}
 {\selectlanguage{english}\rmfamily\color{black}
 Health-e will ideally be made available on both the Android and iOS market free of charge. Development and maintenance costs are essentially nonexistent, so funding will not be an issue. The final product will exist under the confines of this course and future extensions to the product, while possible, will probably not be taken up by the group currently implementing this product, if at all. 
 \newline\newline Of the core features mentioned above, only the \textit{Form Entry}, \textit{Browsing and Search}, and \textit{Delayed Upload} features will be discussed further in this document as those are the only features that the Green Team will be focusing on for this project. 
 }
 
-\subsection[Major Constraints]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Major Constraints}
+\subsection[MAJOR CONSTRAINTS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+MAJOR CONSTRAINTS}
 {\selectlanguage{english}\rmfamily\color{black}
 The main constraint for the Health-e project is time. There is approximately a month allocated to the development, testing, and release of this product. This is not a sufficient amount of time to properly produce a fully functional product, so some aspects of the development will probably be neglected. While all of the core features for the tablet will be included in the final product, as well all of the features not mentioned in this document for the web app and database, the functionality of these features may not be compromised. 
 }
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=4in,height=3in]{Diagram1.png}
-\end{figure}
-
-
+\subsection[INTENDED AUDIENCE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+INTENDED AUDIENCE}
+{\selectlanguage{english}\rmfamily\color{black}
+WRITE HERE}
 
 
 \clearpage\section[DATA DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 DATA DESIGN}
-\subsection[Internal Software Data Structure]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Internal Software Data Structure}
+\subsection[INTERNAL SOFTWARE DATA STRUCTURE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+INTERNAL SOFTWARE DATA STRUCTURE}
 {\selectlanguage{english}\rmfamily\color{black}
 WRITE HERE}
-\subsection[Global Data Structure]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Global Data Structure}
+
+\subsection[GLOBAL DATA STRUCTURE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+GLOBAL DATA STRUCTURE}
 {\selectlanguage{english}\rmfamily\color{black}
 WRITE HERE}
-\subsection[Temporary Data Structure]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Temporary Data Structure}
+
+\subsection[TEMPORARY DATA STRUCTURE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+TEMPORARY DATA STRUCTURE}
 {\selectlanguage{english}\rmfamily\color{black}
 WRITE HERE}
-\subsection[Database Description]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Database Description}
+
+\subsection[DATABASE DESCRIPTION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+DATABASE DESCRIPTION}
 {\selectlanguage{english}\rmfamily\color{black}
 WRITE HERE}
+
 
 \clearpage\section[ARCHITECTURAL AND COMPONENT-LEVEL DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 ARCHITECTURAL AND COMPONENT-LEVEL DESIGN}
-\subsection[System Structure]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-System Structure}
+\subsection[SYSTEM STRUCTURE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+SYSTEM STRUCTURE}
+Insert public class diagrams, UML. Talk about the relationship of these to each sub-project.
 
-\subsubsection[Browsing and Search]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Browsing and Search}
-{\selectlanguage{english}\rmfamily\color{black}
-Introduction to design document.
-}
-\subsubsection[Form Entry]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Browsing and Search}
-{\selectlanguage{english}\rmfamily\color{black}
-Introduction to design document.
-}
-\subsubsection[Delayed Upload]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Browsing and Search}
-{\selectlanguage{english}\rmfamily\color{black}
-Introduction to design document.
-}
-
+\subsection[SYSTEM IMPLEMENTATION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+SYSTEM IMPLEMENTATION}
 {\selectlanguage{english}\rmfamily\color{black}
 Write Here
 }
-\subsection[BEGIN DEFINING SUB CLASSES...]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-BEGIN DEFINING SUB CLASSES...}
+\subsubsection{Class Definitions}
+
+\subsubsection{Function Descriptions}
+
+
+\clearpage\section[USER INTERFACE DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+[USER INTERFACE DESIGN}
+
+\subsection[DESCRIPTION OF THE USER INTERFACE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+DESCRIPTION OF THE USER INTERFACE}
 {\selectlanguage{english}\rmfamily\color{black}
-Write Here
-}
-
-
-
-%\clearpage\section[DATA MODELING]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-%DATA MODELING}
-
-\clearpage\section{User Interface Design}
-
-\subsection[Description of the User Interface]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Description of the User Interface}
-{\selectlanguage{english}\rmfamily\color{black}
-Describethefunctionality of thesystem from the users perspective. Explain howtheuser
+Describe the functionality of the system from the users perspective. Explain how the user
 will be able to use your system to complete all the expected features and the feedback
-information that will bedisplayedfor theuser.
+information that will be displayed for the user.
 }
 
 \subsubsection[Browsing and Search]{\selectlanguage{english}\rmfamily\bfseries\color{black}
@@ -429,87 +413,68 @@ Browsing and Search}
 {\selectlanguage{english}\rmfamily\color{black}
 Introduction to design document.
 }
+
 \subsubsection[Form Entry]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Browsing and Search}
 {\selectlanguage{english}\rmfamily\color{black}
 Introduction to design document.
 }
+
 \subsubsection[Delayed Upload]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Browsing and Search}
 {\selectlanguage{english}\rmfamily\color{black}
 Introduction to design document.
 }
 
-\subsection[For first time users]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-For first time users}
+\subsection[FOR FIRST TIME USERS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+FOR FIRST TIME USERS}
 {\selectlanguage{english}\rmfamily\color{black}
 Describethefunctionality of thesystem from the users perspective. Explain howtheuser
 will be able to use your system to complete all the expected features and the feedback
 information that will bedisplayedfor theuser.
 }
-\subsection[For returning users]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-For first time users}
+
+\subsection[FOR RETURNING USERS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+FOR RETURNING USERS}
 {\selectlanguage{english}\rmfamily\color{black}
 Describethefunctionality of thesystem from the users perspective. Explain howtheuser
 will be able to use your system to complete all the expected features and the feedback
 information that will bedisplayedfor theuser.
 }
-\subsection[Screen Images]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Screen Images}
+
+\subsection[SCREEN IMAGES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+SCREEN IMAGES}
 {\selectlanguage{english}\rmfamily\color{black}
 Display screenshots showingtheinterfacefrom theusers perspective. Thesecan be handdrawn
 or youcan use an automateddrawing tool. Just make them as accurateas possible.
 (Graph paper workswell.)
 }
-\subsection[Screen Objects and Actions]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Screen Objects and Actions}
+
+\subsection[SCREEN OBJECTS \& ACTIONS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+SCREEN OBJECTS \& ACTIONS}
 {\selectlanguage{english}\rmfamily\color{black}
 A discussion of screen objects andactions associatedwith thoseobjects.
 }
 
-\clearpage\section[Restrictions Limitations and Constraints ]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Restrictions Limitations and Constraints}
+\clearpage\section[RESTRICTIONS, LIMITATIONS, \& CONSTRAINTS]{\selectlanguage{english}\rmfamily\bfseries\color{black}RESTRICTIONS, LIMITATIONS, \& CONSTRAINTS}
 
-\clearpage\section[Testing Issues ]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Testing Issues}
+\clearpage\section[TESTING ISSUES ]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+TESTING ISSUES}
 
 \subsection[Testing cases and expected results]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Testing cases and expected results}
-{\selectlanguage{english}\rmfamily\color{black}
-A discussion of screen objects andactions associatedwith thoseobjects.
-}
+
+
 \subsection[Performance Bounds]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Performance Bounds}
-{\selectlanguage{english}\rmfamily\color{black}
-A discussion of screen objects andactions associatedwith thoseobjects.
-}
+
+
 \subsection[Critical Systems]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Critical Systems}
-{\selectlanguage{english}\rmfamily\color{black}
-A discussion of screen objects andactions associatedwith thoseobjects.
-}
+
+
 \subsection[Testing Cases]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Testing Cases}
-{\selectlanguage{english}\rmfamily\color{black}
-A discussion of screen objects andactions associatedwith thoseobjects.
-}
-
-\clearpage\section[APPENDIX A. ]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-APPENDIX A. \ Example Screens}
-
-\bigskip
-
-{\selectlanguage{english}\itshape\color{black}
-Include copies of specifications, mockups, prototypes, etc. supplied or
-derived from the customer. \ Appendices are labeled A, B, {\dots}n.
-\ \ Reference each appendix as appropriate in the text of the document.
-}
-
-{\selectlanguage{english}\color{black}
-\foreignlanguage{english}{\ }\foreignlanguage{english}{[ insert appendix
-A here ]}}
-
-
 
 
 \bigskip
