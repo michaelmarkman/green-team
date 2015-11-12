@@ -206,61 +206,138 @@ Section\ \hfill  Page}
 \clearpage\clearpage\setcounter{page}{1}\pagestyle{Convertii}
 \section[INTRODUCTION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 INTRODUCTION}
+The purpose of this software design document is to provide a low-level description of Health-e, providing insight into the structure and design of each component. In short, this document is meant to equip the reader with a concrete understanding of the inner workings of the Health-e system.
 
 \subsection[GOALS \& OBJECTIVES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 GOALS \& OBJECTIVES}
 {\selectlanguage{english}\rmfamily\color{black}
-Introduction to design document.
+The purpose of Health-e is to replace the current physical method of archiving Board of Health data from restaurant inspections, well reports, and septic tank reports with a new, digital system. The intended user of the tablet aspect of this product is a health inspector who will be using the tablet to document or browse for data while on sight at an inspection. Accordingly, the final product must be quick, efficient, and easy to use. It must offer the appropriate features to the user without overwhelming them or requiring them to spend valuable time learning how to use said features. The user interface should be intuitive and easy to learn so that the system acts as a tool for the user, not something that slows them down while they are doing their job.
 }
 
 \subsubsection[Browsing and Search]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Browsing and Search}
 {\selectlanguage{english}\rmfamily\color{black}
-
+The user must be able to quickly and efficiently find the data that they are searching for on the tablet. This requires a streamlined browsing and search interface that allows the user to visualize results in an easy-to-read manner. They will be able to enter a search query into a search bar that will always exist in the same location on the page, and results will be displayed in a list format with the most relevant results at the top. The focus here is that the user should not have to spend time searching through the list of results to find the data they are looking for; maneuvering through the results should be a quick, intuitive process.  
 }
 \subsubsection[Form Entry]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Form Entry}
 {\selectlanguage{english}\rmfamily\color{black}
-
+Form entries should model the paper version of the forms in which the inspector would normally fill out on location. They will not replicate the paper forms exactly since that would cause the user to have to constantly zoom in and out on the tablet to fill in sections of the form due to the size of a typical tablet screen. Rather, all fields that appear on the paper forms will appear on the tablet forms in a simple, clean format. The user interface here should be predictable and exist in the natural, chronological order in which the inspector would typically fill out the fields so that it is efficient and easy to use. 
 }
 \subsubsection[Delayed Upload]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Delayed Upload}
 {\selectlanguage{english}\rmfamily\color{black}
-
+The user should not have to have a second thought about delayed upload. That being said, the system must effectively notify the user of the current status of certain documents. Having an icon system that identifies documents on the tablet as being uploaded or in queue for delayed upload will allow the user to remain in the loop as far as the status of their documents in a simple, noninvasive manner.
 }
 
-\subsection[PROJECT OVERVIEW \& SCOPE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+\clearpage\subsection[PROJECT OVERVIEW \& SCOPE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 PROJECT OVERVIEW \& SCOPE}
 {\selectlanguage{english}\rmfamily\color{black}
-WRITE HERE}
+The Health-e system is comprised of two main user components: a web app and a tablet app. For the sake of this design document, we will only be focusing on the tablet app portion of this system. Within this document, the terms user and health inspector will be interchangeable as they are one in the same for this project. The following are some definitions of common phrases that will be used in this document.
+}
 
-\subsubsection{Core Features}
+\begin{flushleft}
+\tablehead{}
+\begin{supertabular}{|m{1.3587599in}|m{5.00806in}|}
+\hline
+\centering \selectlanguage{english}\bfseries\color{black} Term or
+Acronym &
+\centering\arraybslash \selectlanguage{english}\bfseries\color{black}
+Definition\\\hline
+\selectlanguage{english}\color{black} UML &
+\selectlanguage{english}\color{black} Unified Modeling Language\\\hline
+
+\selectlanguage{english}\color{black} DFD &
+\selectlanguage{english}\color{black} Data Flow Diagram\\\hline
+\selectlanguage{english}\color{black} SDD &
+\selectlanguage{english}\color{black} Software Design Document, aka SDS,
+Software Design Specification\\\hline
+\selectlanguage{english}\color{black} SRS &
+\selectlanguage{english}\color{black} Software Requirements
+Specification\\\hline
+
+\end{supertabular}
+\end{flushleft}
+
+\subsubsection{Core features}
 {\selectlanguage{english}\rmfamily\color{black}
-WRITE HERE}
+The tablet app will include the following core features:
+\begin{enumerate}
+\item User Authentication
+\begin{itemize}
+\item Asks the user for their unique password to ensure that the information stored on the tablet app is safe and secure
+\end{itemize}
+\item Form Entry
+\begin{itemize}
+\item Streamlines the form entry process by providing all necessary fields in a clean, organized format
+\item Provides restaurant, well, and septic forms available to choose from with ease
+\item Replicates the original forms in terms of color coding, field names, and information
+\end{itemize}
+\item Location Entry
+\begin{itemize}
+\item Documents the current location of the user in terms of coordinates
+\item Maps the user's location and their proximity to other septic tanks and wells in the area
+\end{itemize}
+\item Browsing and Search
+\begin{itemize}
+\item Allows the user to complete a search query using the search bar
+\item Displays search results in a scrolling list form that is easy to maneuver through
+\item Displays search results in a variety of orders depending on the user's specification
+\newline\newline
+\end{itemize}
+\item Form Printing
+\begin{itemize}
+\item Displays what a form will appear as on a printed page with options to print or cancel
+\end{itemize}
+\item Delayed Upload
+\begin{itemize}
+\item Categorizes completed forms as either uploaded or pending for delayed upload
+\item Displays to the user which forms fall in which category based on icons associated with the forms
+\end{itemize}
+\end{enumerate}
+}
 
-\subsubsection{Additional Features}
+\subsubsection{Addtional features}
 {\selectlanguage{english}\rmfamily\color{black}
-WRITE HERE}
-
-% \subsection[REFERENCES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-% REFERENCES}
-% {\selectlanguage{english}\itshape\color{black}
-% WRITE HERE}
+Below are some features that are not guaranteed to be incorporated in the final product, but could potentially be included, time permitting. Due to their tentative nature, they will not be covered in this document.
+\begin{enumerate}
+\item Accessibility
+\begin{itemize}
+\item The user could be able to change certain accessibility options such as form layout, background customization, and font size or style
+\end{itemize}
+\item Device Synchronization
+\begin{itemize}
+\item The user could be able to synchronize data across multiple devices such as tablets and mobile devices
+\end{itemize}
+\end{enumerate}
+}
 
 \subsection[SOFTWARE CONTEXT]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SOFTWARE CONTEXT}
 {\selectlanguage{english}\rmfamily\color{black}
-WRITE HERE}
+Health-e will ideally be made available on both the Android and iOS market free of charge. Development and maintenance costs are essentially nonexistent, so funding will not be an issue. The final product will exist under the confines of this course and future extensions to the product, while possible, will probably not be taken up by the group currently implementing this product, if at all. 
+\newline\newline Of the core features mentioned above, only the \textit{Form Entry}, \textit{Browsing and Search}, and \textit{Delayed Upload} features will be discussed further in this document as those are the only features that the Green Team will be focusing on for this project. 
+}
 
 \subsection[MAJOR CONSTRAINTS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 MAJOR CONSTRAINTS}
 {\selectlanguage{english}\rmfamily\color{black}
-WRITE HERE}
-
+The main constraint for the Health-e project is time. There is approximately a month allocated to the development, testing, and release of this product. This is not a sufficient amount of time to properly produce a fully functional product, so some aspects of the development will probably be neglected. While all of the core features for the tablet will be included in the final product, as well all of the features not mentioned in this document for the web app and database, the functionality of these features may not be compromised. 
+}
 \subsection[INTENDED AUDIENCE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 INTENDED AUDIENCE}
 {\selectlanguage{english}\rmfamily\color{black}
-WRITE HERE}
+While the SRS document is intended for a more general audience, the purpose of this design document is to layout a visual template and functional flow of the final product and is thus intended for individuals who may be working directly on this product. This includes software engineers, project consultants, and team managers. 
+}
+
+\subsection[REFERENCES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+REFERENCES}
+{\selectlanguage{english}\rmfamily\color{black}
+Food Inspection Form: 
+\hyperref[]{https://people.cs.umass.edu/~ridgway/cmpsci320/customer/FoodInspectionForm.pdf}
+Septic Pumping Report can be found under "Title 5 Official Inspection Form" via this link: 
+\hyperref[]{http://www.mass.gov/eea/agencies/massdep/water/approvals/title-5-septic-system-forms.html}
+}
 
 
 \clearpage\section[DATA DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
