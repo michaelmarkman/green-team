@@ -13,7 +13,7 @@
 \usepackage{hhline}
 \usepackage{hyperref}
 \usepackage{float}
-\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=SOFTWARE DESIGN DOCUMENT (SDD), pdfauthor=Shaylyn Adams}
+\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=SOFTWARE DESIGN DOCUMENT (SRS), pdfauthor=Shaylyn Adams}
 \usepackage[pdftex]{graphicx}
 % Outline numbering
 \setcounter{secnumdepth}{5}
@@ -203,6 +203,7 @@ Section\ \hfill  Page}
 
 \bigskip
 
+\clearpage\clearpage\setcounter{page}{1}\pagestyle{Convertii}
 \section[INTRODUCTION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 INTRODUCTION}
 The purpose of this software design document is to provide a low-level description of Health-e, providing insight into the structure and design of each component. In short, this document is meant to equip the reader with a concrete understanding of the inner workings of the Health-e system.
@@ -282,6 +283,7 @@ The tablet app will include the following core features:
 \item Allows the user to complete a search query using the search bar
 \item Displays search results in a scrolling list form that is easy to maneuver through
 \item Displays search results in a variety of orders depending on the user's specification
+\newline\newline
 \end{itemize}
 \item Form Printing
 \begin{itemize}
@@ -365,17 +367,29 @@ WRITE HERE}
 ARCHITECTURAL AND COMPONENT-LEVEL DESIGN}
 \subsection[SYSTEM STRUCTURE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM STRUCTURE}
-Insert public class diagrams, UML. Talk about the relationship of these to each sub-project.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6in,height=7in]{uml.jpg}
+\end{figure}
 
 \subsection[SYSTEM IMPLEMENTATION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM IMPLEMENTATION}
 {\selectlanguage{english}\rmfamily\color{black}
-Write Here
+Health-e will be written in HTML5, CSS and Javascript. We will use the Ionic Framework to deploy the application for iOS and Android simultaneously. Ionic utilizes AngularJS and Sass to offer libraries for mobile-optimized HTML, CSS, and Javascript components. Additionally, we will be using the Ionic Material library for an advanced UI for our app. All classes and functions described in this section will be written in Javascript and will utilize these libraries.
 }
 \subsubsection{Class Definitions}
-
+\begin{itemize}
+\item Report - Superclass for Restaurant, Well and Septic classes. Contains most basic report/form information.
+\item Restaurant - Subclass of Report. Contains all fields pertaining to Restaurant Form input.
+\item Well -  Subclass of Report. Contains all fields pertaining to Well  Form input.
+\item Septic - Subclass of Report. Contains all fields pertaining to Septic Form input.
+\item Location - Specific information pertaining to where a report takes place.
+\item User - References the user/inspector that is logged into the system and submitting a restaurant report.
+\item Violation - Specifics to the type of restaurant violation including a text description.
+\item Query - Contains ability to search for past submitted forms by report type, date, and keywords.
+\end{itemize}
 \subsubsection{Function Descriptions}
-
+All classes will have getter and setter methods to give access to the many variables. These functions will be public so information about the reports can be accessed anywhere.
 
 \clearpage\section[USER INTERFACE DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 [USER INTERFACE DESIGN}
