@@ -343,14 +343,15 @@ Septic Pumping Report can be found under "Title 5 Official Inspection Form" via 
 ARCHITECTURAL AND COMPONENT-LEVEL DESIGN}
 \subsection[SYSTEM STRUCTURE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM STRUCTURE}
+Health-e will be written in HTML5, CSS and Javascript. We will use the Ionic Framework to deploy the application for iOS and Android simultaneously. Ionic utilizes AngularJS and Sass to offer libraries for mobile-optimized HTML, CSS, and Javascript components. Additionally, we will be using the Ionic Material library for an advanced UI for our app. 
 \subsubsection{UML Diagrams}
-\begin{figure}[h!]
+
+\begin{figure}[H]
 \centering
-\includegraphics[width=6in,height=7in]{uml.jpg}
+\includegraphics[width=6in,height=6in]{uml.jpg}
 \caption{Shows abstractions for data on forms and search.}
 \end{figure}
-
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=6in,height=6in]{Delayed_Upload_UML.png}
 \caption{Shows abstractions for the system's uploading of forms.}
@@ -359,7 +360,11 @@ SYSTEM STRUCTURE}
 \subsection[SYSTEM IMPLEMENTATION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM IMPLEMENTATION}
 {\selectlanguage{english}\rmfamily\color{black}
-Health-e will be written in HTML5, CSS and Javascript. We will use the Ionic Framework to deploy the application for iOS and Android simultaneously. Ionic utilizes AngularJS and Sass to offer libraries for mobile-optimized HTML, CSS, and Javascript components. Additionally, we will be using the Ionic Material library for an advanced UI for our app. All classes and functions described in this section will be written in Javascript and will utilize these libraries.
+All classes and functions described in this section will be written in Javascript and will utilize the following libraries:
+\begin{itemize}
+\item Library 1 
+\item Library 2 
+\end{itemize}
 }
 \subsubsection{Class Definitions}
 \begin{itemize}
@@ -381,57 +386,62 @@ USER INTERFACE DESIGN}
 \subsection[DESCRIPTION OF THE USER INTERFACE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 DESCRIPTION OF THE USER INTERFACE}
 {\selectlanguage{english}\rmfamily\color{black}
-Describe the functionality of the system from the users perspective. Explain how the user
-will be able to use your system to complete all the expected features and the feedback
-information that will be displayed for the user.
-}
+The user interface will consist of various menus through which the user can interact with the tablet application. These menus will include a ''Browsing and Search'' menu, a ''Form Entry'' menu, and a ''Delayed Upload'' status bar. Each menu will contain fields for navigating and performing a specified task. The user will interact with the menus through the device's touch screen. 
+\newline
 
-\subsubsection[Browsing and Search]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Browsing and Search}
-{\selectlanguage{english}\rmfamily\color{black}
-Introduction to design document.
-}
+\noindent Each menu will consist of various GUI components, such as buttons, labels, text fields, and scroll wheels. These components will be arranged in such a way that the user will be able to quickly navigate through each menu, complete forms, search and browse through the database. 
+The top of the tablet screen will have a header including an ''add new'' button, a search icon, and a drop down menu. The drop down menu will show options for logging out or sorting the thumbnails on the screen.
+\newline
 
-\subsubsection[Form Entry]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Browsing and Search}
-{\selectlanguage{english}\rmfamily\color{black}
-Introduction to design document.
-}
-
-\subsubsection[Delayed Upload]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-Browsing and Search}
-{\selectlanguage{english}\rmfamily\color{black}
-Introduction to design document.
-}
-
-\subsection[FOR FIRST TIME USERS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-FOR FIRST TIME USERS}
-{\selectlanguage{english}\rmfamily\color{black}
-Describethefunctionality of thesystem from the users perspective. Explain howtheuser
-will be able to use your system to complete all the expected features and the feedback
-information that will bedisplayedfor theuser.
-}
-
-\subsection[FOR RETURNING USERS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-FOR RETURNING USERS}
-{\selectlanguage{english}\rmfamily\color{black}
-Describethefunctionality of thesystem from the users perspective. Explain howtheuser
-will be able to use your system to complete all the expected features and the feedback
-information that will bedisplayedfor theuser.
-}
-
-\subsection[SCREEN IMAGES]{\selectlanguage{english}\rmfamily\bfseries\color{black}
-SCREEN IMAGES}
-{\selectlanguage{english}\rmfamily\color{black}
-Display screenshots showingtheinterfacefrom theusers perspective. Thesecan be handdrawn
-or youcan use an automateddrawing tool. Just make them as accurateas possible.
-(Graph paper workswell.)
+\noindent A detailed description of these menus and their interactions with one another will be described in the following section.
 }
 
 \subsection[SCREEN OBJECTS \& ACTIONS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SCREEN OBJECTS \& ACTIONS}
-{\selectlanguage{english}\rmfamily\color{black}
-A discussion of screen objects andactions associatedwith thoseobjects.
-}
+\subsubsection[Browsing and Search]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+Browsing and Search}
+INSERT SEARCH BEORE SCREEN HERE
+
+Upon entering the browsing and search menu, a search text or icon will always be available at the header. When tapped, the search bar will expand and a touch keyboard will appear. The search results will be based on Google's results page where the surrounding text around the search term will be displayed. The search term will be in bold.
+
+INSERT SEARCH AFTER SCREEN HERE
+
+The search will also provide suggestions as the user types out the term. When the user selects a form that they have found,  options to view, edit, email, and print will appear.
+
+INSERT SORT DATA SCREEN HERE
+INSERT SORT CATEGORY SCREEN HERE
+
+Three categories appear underneath the header. These categories are restaurants, wells, and septic tanks. Each category can be scrolled horizontally similar to Netflix's category functionality. Thumbnails of each document are sorted by most recent left to right. 
+
+INSERT SPECIFIC CATEGORY SCREEN HERE
+
+When the user taps on a category, it expands the category to the full screen and displays all of the document thumbnails in that category with a vertical scroll.
+
+When the user taps on a thumbnail, there will be options to view, edit, email, and print. 
+
+\subsubsection[Form Entry]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+Form Entry}
+
+INSERT RESTAURANT SCREEN HERE
+
+INSERT SEPTIC SCREEN HERE
+
+Upon choosing a form, the tablet displays a simple blank form with fillable text fields. For the restaurant inspection form, information is split into different sections. Each section will be color coded similarly to the paper form currently used.
+
+When a field is tapped, the tablet's on-screen touch keyboard will appear. The whole fillable form is displayed on one screen and the user will scroll vertically. 
+
+A ''complete'' button will be shown on the tablet screen. When the button is tapped, the data entered will be applied to a PDF form and several buttons including print, edit, email, and exit will appear on the screen. A sync status will also appear here.
+
+
+\subsubsection[Delayed Upload]{\selectlanguage{english}\rmfamily\bfseries\color{black}
+Delayed Upload}
+INSERT ICON SCREEN HERE
+
+INSERT MODAL/POPUP SCREEN HERE
+
+There will be 2 different icons shown on each document thumbnail. Each of these icons will have a distinctive shape and color. A blue sync icon means an upload is in progress. A red sync icon means upload has failed and will try again when network is available. No icon means the file is successfully on the server.
+
+The auto-hiding status bar at the bottom of the screen appears when syncing (blue) or when syncing has failed (red) and will be hidden when there is nothing to be synced.
+
 
 \end{document}
