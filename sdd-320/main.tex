@@ -13,8 +13,9 @@
 \usepackage{hhline}
 \usepackage{hyperref}
 \usepackage{float}
-\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=SOFTWARE DESIGN DOCUMENT (SRS), pdfauthor=Shaylyn Adams}
+\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=SOFTWARE DESIGN DOCUMENT (SDD), pdfauthor=Shaylyn Adams}
 \usepackage[pdftex]{graphicx}
+\usepackage{subcaption}
 % Outline numbering
 \setcounter{secnumdepth}{5}
 \renewcommand\thesection{\arabic{section}}
@@ -360,12 +361,7 @@ Health-e will be written in HTML5, CSS and Javascript. We will use the Ionic Fra
 \subsection[SYSTEM IMPLEMENTATION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM IMPLEMENTATION}
 {\selectlanguage{english}\rmfamily\color{black}
-All classes and functions described in this section will be written in Javascript and will utilize the following libraries:
-\begin{itemize}
-\item Library 1 
-\item Library 2 
-\end{itemize}
-}
+All classes and functions described in this section will be written in Javascript.
 \subsubsection{Class Definitions}
 \begin{itemize}
 \item Report - Superclass for Restaurant, Well and Septic classes. Contains most basic report/form information.
@@ -378,7 +374,14 @@ All classes and functions described in this section will be written in Javascrip
 \item Query - Contains ability to search for past submitted forms by report type, date, and keywords.
 \end{itemize}
 \subsubsection{Function Descriptions}
-All classes will have getter and setter methods to give access to the many variables. These functions will be public so information about the reports can be accessed anywhere.
+All classes will have getter and setter methods to give access to the many variables. These functions will be public so information about the reports can be accessed anywhere. Examples include:
+\begin{center}
+\begin{verbatim}
+function filterRecordsWithQuery(String query)
+function displayRecordWithID(int id)
+function getRecordsForBrowse(int recordType, String town)
+\end{verbatim}
+\end{center}
 
 \clearpage\section[USER INTERFACE DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 USER INTERFACE DESIGN}
@@ -395,53 +398,84 @@ The top of the tablet screen will have a header including an ''add new'' button,
 
 \noindent A detailed description of these menus and their interactions with one another will be described in the following section.
 }
-
+\newpage
 \subsection[SCREEN OBJECTS \& ACTIONS]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SCREEN OBJECTS \& ACTIONS}
 \subsubsection[Browsing and Search]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Browsing and Search}
-INSERT SEARCH BEORE SCREEN HERE
-
 Upon entering the browsing and search menu, a search text or icon will always be available at the header. When tapped, the search bar will expand and a touch keyboard will appear. The search results will be based on Google's results page where the surrounding text around the search term will be displayed. The search term will be in bold.
+\newline
 
-INSERT SEARCH AFTER SCREEN HERE
+\noindent The search will also provide suggestions as the user types out the term. There will be an option to sort by category specifically or a date. When the user selects a form that they have found,  options to view, edit, email, and print will appear.
 
-The search will also provide suggestions as the user types out the term. When the user selects a form that they have found,  options to view, edit, email, and print will appear.
+\begin{figure}[h]
+\centering
+\includegraphics[width=3.5in,height=5in]{Search.png}
+\caption{Search screen}
+\end{figure}
+\newpage
+\noindent Three categories will be arranged underneath the header. The categories are restaurants, wells, and septic tanks. Each category can be scrolled horizontally similar to Netflix's category functionality. Thumbnails of each document are sorted by most recent left to right. 
 
-INSERT SORT DATA SCREEN HERE
-INSERT SORT CATEGORY SCREEN HERE
-
-Three categories appear underneath the header. These categories are restaurants, wells, and septic tanks. Each category can be scrolled horizontally similar to Netflix's category functionality. Thumbnails of each document are sorted by most recent left to right. 
-
-INSERT SPECIFIC CATEGORY SCREEN HERE
-
-When the user taps on a category, it expands the category to the full screen and displays all of the document thumbnails in that category with a vertical scroll.
-
-When the user taps on a thumbnail, there will be options to view, edit, email, and print. 
+\begin{figure}
+    \centering
+    \begin{subfigure}[h]{0.4\textwidth}
+       \includegraphics[width=2.5in,height=4in]{Browse_By_Category.png}
+    \end{subfigure}
+    \qquad 
+    \begin{subfigure}[h]{0.4\textwidth}
+       \includegraphics[width=2.5in,height=4in]{Browse_By_Date.png}
+    \end{subfigure}
+     \caption{Browse by category/date screens}
+\end{figure}
+\newpage
+\noindent When the user taps on a category, it expands the category to the full screen and displays all of the document thumbnails in that category with a vertical scroll. When the user taps on a thumbnail, there will be options to view, edit, email, and print.
+\begin{figure}[H]
+\centering
+\includegraphics[width=3.5in,height=5in]{Specific_Category_Restaurants.png}
+\caption{Specific category chosen screen}
+\end{figure}
+\newpage
 
 \subsubsection[Form Entry]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Form Entry}
+Upon choosing a form, the tablet displays a simple blank form with fillable text fields (see Figure 6). For the restaurant inspection form, information is split into different sections. Each section will be color coded similarly to the paper form currently used.
+\newline
 
-INSERT RESTAURANT SCREEN HERE
+\noindent When a field is tapped, the tablet's on-screen touch keyboard will appear. The whole fillable form is displayed on one screen and the user will scroll vertically. 
+\newline
 
-INSERT SEPTIC SCREEN HERE
+\noindent A ''complete'' button will be shown on the tablet screen. When the button is tapped, the data entered will be applied to a PDF form and several buttons including print, edit, email, and exit will appear on the screen. A sync status will also appear here.
 
-Upon choosing a form, the tablet displays a simple blank form with fillable text fields. For the restaurant inspection form, information is split into different sections. Each section will be color coded similarly to the paper form currently used.
+\begin{figure}
+    \centering
+    \begin{subfigure}[H]{0.4\textwidth}
+  \includegraphics[width=2.5in,height=4in]{Restaurant_Data_Entry_Form.png}
+    \end{subfigure}
+    \qquad 
+    \begin{subfigure}[H]{0.4\textwidth}
+  \includegraphics[width=2.5in,height=4in]{Septic_Data_Entry_Form.png}
+    \end{subfigure}
+     \caption{Restaurant Inspection/Septic Report screens}
+\end{figure}
 
-When a field is tapped, the tablet's on-screen touch keyboard will appear. The whole fillable form is displayed on one screen and the user will scroll vertically. 
-
-A ''complete'' button will be shown on the tablet screen. When the button is tapped, the data entered will be applied to a PDF form and several buttons including print, edit, email, and exit will appear on the screen. A sync status will also appear here.
-
-
+\newpage
 \subsubsection[Delayed Upload]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 Delayed Upload}
-INSERT ICON SCREEN HERE
-
-INSERT MODAL/POPUP SCREEN HERE
-
 There will be 2 different icons shown on each document thumbnail. Each of these icons will have a distinctive shape and color. A blue sync icon means an upload is in progress. A red sync icon means upload has failed and will try again when network is available. No icon means the file is successfully on the server.
+\newline
 
-The auto-hiding status bar at the bottom of the screen appears when syncing (blue) or when syncing has failed (red) and will be hidden when there is nothing to be synced.
-
-
+\noindent The auto-hiding status bar at the bottom of the screen appears when syncing (blue) or when syncing has failed (red) and will be hidden when there is nothing to be synced.
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+  \includegraphics[width=2.5in,height=4in]{Delayed_Upload_Main_Screen.png}
+  \caption{Sync icons}
+    \end{subfigure}
+    \qquad 
+    \begin{subfigure}[t]{0.4\textwidth}
+  \includegraphics[width=2.5in,height=4in]{Delayed_Upload_Modal.png}
+  	\caption{Submitting form with no internet access}
+    \end{subfigure}
+    \caption{Delayed Upload Screens}
+\end{figure}
 \end{document}
