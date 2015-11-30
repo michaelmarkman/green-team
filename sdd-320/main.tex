@@ -347,6 +347,12 @@ ARCHITECTURAL AND COMPONENT-LEVEL DESIGN}
 \subsection[SYSTEM STRUCTURE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM STRUCTURE}
 Health-e will be written in HTML5, CSS and Javascript. We will use the Ionic Framework to deploy the application for iOS and Android simultaneously. Ionic utilizes AngularJS and Sass to offer libraries for mobile-optimized HTML, CSS, and Javascript components. Additionally, we will be using the Ionic Material library for an advanced UI for our app. 
+
+\subsubsection{Justification}
+The selection of the Ionic Framework followed the consideration of other frameworks including the native iOS and Android SDKs. After recognizing that a health inspector should not be limited to any single device, a priority was placed on the availability of the tablet application. 
+\\
+The Ionic framework builds off of Apache Cordova and allows for the development of a single code-base that creates an Android, Windows, and iOS application. The framework is an extremely popular open source product with a large community to help with any problems that arise. Ionic is also designed with the native SDKs in mind allowing users to have a native iOS, Android, or Windows experience.
+
 \subsubsection{UML Diagrams}
 
 \begin{figure}[H]
@@ -354,6 +360,11 @@ Health-e will be written in HTML5, CSS and Javascript. We will use the Ionic Fra
 \includegraphics[width=6in,height=6in]{uml.jpg}
 \caption{Shows abstractions for data on forms and search.}
 \end{figure}
+
+\subsubsection{Delayed Upload}
+
+When control is passed to the DelayedUploadController a few processes can be run. When an update is run locally, 
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=6in,height=6in]{Delayed_Upload_UML.png}
@@ -501,7 +512,7 @@ There will be 2 different icons shown on each document thumbnail. Each of these 
     \qquad 
     \begin{subfigure}[t]{0.4\textwidth}
   \includegraphics[width=2.5in,height=4in]{Delayed_Upload_Modal.png}
-  	\caption{Submitting form with no internet access}
+    \caption{Submitting form with no internet access}
     \end{subfigure}
     \caption{Delayed Upload Screens}
 \end{figure}
