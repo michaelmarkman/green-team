@@ -396,11 +396,14 @@ All classes and functions described in this section will be written in Javascrip
 All classes will have getter and setter methods to give access to the many variables. These functions will be public so information about the reports can be accessed anywhere. Examples include:
 \begin{center}
 \begin{verbatim}
-function isValid?: checks the report to ensure that it is valid to be saved. If it is not, highlights all invalid inputs.
+function isValid?: checks the report to ensure that it is valid to be saved. If it is not, highlights
+all invalid inputs.
 function submit: allocates memory for the report and saves it to the local database.
-function filterRecordsWithQuery(Query query): Given a query, filter the records to show all records that conform to the query.
+function filterRecordsWithQuery(Query query): Given a query, filter the records to show all records
+that conform to the query.
 function displayRecordWithID(int id): Given a report ID, display the report associated with that ID.
-function getRecordsForBrowse(int recordType, String town): Returns all reports of the given type for the given town.
+function getRecordsForBrowse(int recordType, String town): Returns all reports of the given type
+for the given town.
 function getOnlineStatus(): Checks to see if device is connected to the internet.
 function addFormToSync(UID): Given the UID, places form in queue to be uploaded
 function getNewData(): Checks form to get new data.
@@ -424,10 +427,20 @@ FORM ENTRY}
 
 \subsection[BROWSING AND SEARCH]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 BROWSING AND SEARCH}
-\subsubsection{Principle Action 1}
-\subsubsection{Principle Action 2}
-\subsubsection{Principle Action 3}
-
+\subsubsection{Principle Action: Browse Records}
+To browse records, the main controller accesses the database for all stored records. The database returns the records, and they are stored in Report objects which are displayed as icons for the user.
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=2in]{BrowseRecords.png}
+\caption{Sequence diagram for retrieving reports for browsing}
+\end{figure}
+\subsubsection{Principle Action: Search for Reports}
+To search for a report, a query object is created from a search string inputted by the user. Through an Ionic plugin, the query filters out the previously loaded reports that are not relevant according to the query string.
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=3in]{SearchForRecords.png}
+\caption{Sequence diagram for filtering stored reports}
+\end{figure}
 \subsection[DELAYED UPLOAD]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 DELAYED UPLOAD}
 \subsubsection{Principle Action: Add Document to be Uploaded}
