@@ -430,9 +430,20 @@ BROWSING AND SEARCH}
 
 \subsection[DELAYED UPLOAD]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 DELAYED UPLOAD}
-\subsubsection{Principle Action 1}
-\subsubsection{Principle Action 2}
-\subsubsection{Principle Action 3}
+\subsubsection{Principle Action: Add Document to be Uploaded}
+To add a document to be uploaded, control is passed from the main controller to the DelayedUploadController where .addFormToSync is called, thus passing control to the SyncController where the document is added to a queue.
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=2in]{Add.jpg}
+\caption{Sequence diagram for adding a document to be uploaded.}
+\end{figure}
+\subsubsection{Principle Action: Upload Document}
+To upload a document, control starts with the SyncController and is passed to the SyncFormModel. The document is then uploaded to the database and the SyncController informs the DelayedUploadController of its success. The DelayedUploadController then updates the status icon for that document using DelayedUploadView.
+\begin{figure}[H]
+\centering
+\includegraphics[width=5in,height=3in]{Upload.jpg}
+\caption{Sequence diagram for uploading a document.}
+\end{figure}
 
 
 \clearpage\section[DATA DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
