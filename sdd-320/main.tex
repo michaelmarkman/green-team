@@ -387,6 +387,10 @@ All classes and functions described in this section will be written in Javascrip
 \item violation - Specifics to the type of restaurant violation including a text description.
 \item query - Contains ability to search for past submitted forms by report type, date, and keywords.
 \item date - uses the default date class from JavaScript.
+\item delayedUploadController - Contains ability to get online status, choose form to sync, get new data, and upload new data.
+\item delayedUploadView - Displays the sync graphic when syncing.
+\item syncController - Contains ability to check if synced, send updated models, and receive updated models.
+\item syncFormModel - Receives the unique identification number.
 \end{itemize}
 \subsubsection{Function Descriptions}
 All classes will have getter and setter methods to give access to the many variables. These functions will be public so information about the reports can be accessed anywhere. Examples include:
@@ -397,6 +401,15 @@ function submit: allocates memory for the report and saves it to the local datab
 function filterRecordsWithQuery(Query query): Given a query, filter the records to show all records that conform to the query.
 function displayRecordWithID(int id): Given a report ID, display the report associated with that ID.
 function getRecordsForBrowse(int recordType, String town): Returns all reports of the given type for the given town.
+function getOnlineStatus(): Checks to see if device is connected to the internet.
+function addFormToSync(UID): Given the UID, places form in queue to be uploaded
+function getNewData(): Checks form to get new data.
+function uploadNewData(): Uploads any new data to database.
+function showSyncGraphic(): Displays the syncing graphic as upload is in progress.
+function synced: returns boolean of is synced or not synced.
+function isSynced(): Checks to see if form is synced with the database.
+function sendUpdatedModels(): Sends the updated models to the database.
+function getUpdatedModels(): Requests the updated models from the database.
 \end{verbatim}
 \end{center}
 
