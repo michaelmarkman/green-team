@@ -374,25 +374,29 @@ When control is passed to the DelayedUploadController a few processes can be run
 \subsection[SYSTEM IMPLEMENTATION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM IMPLEMENTATION}
 {\selectlanguage{english}\rmfamily\color{black}
-All classes and functions described in this section will be written in Javascript.
+All classes and functions described in this section will be written in Javascript. All classes are meant to represent and contain all relevant information pertaining to their real life incarnations. Thus, class attributes for reports are predominantly taken from official documents, and all supporting classes utilize as much real-world information as is relevant.
 \subsubsection{Class Definitions}
 \begin{itemize}
-\item Report - Superclass for Restaurant, Well and Septic classes. Contains most basic report/form information.
-\item Restaurant - Subclass of Report. Contains all fields pertaining to Restaurant Form input.
-\item Well -  Subclass of Report. Contains all fields pertaining to Well  Form input.
-\item Septic - Subclass of Report. Contains all fields pertaining to Septic Form input.
-\item Location - Specific information pertaining to where a report takes place.
-\item User - References the user/inspector that is logged into the system and submitting a restaurant report.
-\item Violation - Specifics to the type of restaurant violation including a text description.
-\item Query - Contains ability to search for past submitted forms by report type, date, and keywords.
+\item restaurant - contains basic information on the restaurant
+\item report - Superclass for restaurantReport, wellReport and SepticReport classes. Contains most basic report/form information.
+\item restaurantReport - Subclass of report. contains information on restaurants that pertain to the restaurant inspections.
+\item wellReport -  Subclass of report. Contains all fields pertaining to Well Report input.
+\item septicReport - Subclass of report. Contains all fields pertaining to Septic Report input.
+\item location - Specific information pertaining on where to find a specific location .
+\item user - References the user/inspector that is logged into the system and submitting a restaurant report.
+\item violation - Specifics to the type of restaurant violation including a text description.
+\item query - Contains ability to search for past submitted forms by report type, date, and keywords.
+\item date - uses the default date class from JavaScript.
 \end{itemize}
 \subsubsection{Function Descriptions}
 All classes will have getter and setter methods to give access to the many variables. These functions will be public so information about the reports can be accessed anywhere. Examples include:
 \begin{center}
 \begin{verbatim}
-function filterRecordsWithQuery(String query)
-function displayRecordWithID(int id)
-function getRecordsForBrowse(int recordType, String town)
+function isValid?: checks the report to ensure that it is valid to be saved. If it is not, highlights all invalid inputs.
+function submit: allocates memory for the report and saves it to the local database.
+function filterRecordsWithQuery(Query query): Given a query, filter the records to show all records that conform to the query.
+function displayRecordWithID(int id): Given a report ID, display the report associated with that ID.
+function getRecordsForBrowse(int recordType, String town): Returns all reports of the given type for the given town.
 \end{verbatim}
 \end{center}
 
