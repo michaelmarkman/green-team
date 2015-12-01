@@ -354,7 +354,7 @@ Health-e will be written in HTML5, CSS and Javascript. We will use the Ionic Fra
 \includegraphics[width=6in,height=6in]{Browsing_and_Search_UML.jpg}
 \caption{Shows abstractions for data on forms and search.}
 \end{figure}
-\noindent Figure 1. shows the UML diagram used for both the browsing and search functionality as well as the data entry. Each form type contains a list of inspections and are sub-types of an abstract ReportType. This structure of data modeling was used to best represent shared data the all three report types contain while still allowing each of them to have multiple inspections. 
+\noindent Figure 1. shows the UML diagram used for both the browsing and search functionality as well as the data entry. Each form type contains a list of inspections and are sub-types of an abstract ReportType. This structure of data modeling was used to best represent shared data the all three report types contain while still allowing each of them to have multiple inspections. The User class, an instance of which is pulled upon login, is used by the Restaurant class to indicate the person performing the inspections. This is in alternative to having a separate attribute in the Restaurant class for the inspector which would be duplicating stored data. Also, of the three report types, only Septic uses an instance of the Location class in addition to the one inherited, so that the owner's location can be stored if it is different from the actual location of the well.
 \begin{figure}[H]
 \centering
 \includegraphics[width=6in,height=6in]{Delayed_Upload_UML.png}
