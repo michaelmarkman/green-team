@@ -135,7 +135,7 @@ SOFTWARE DESIGN DOCUMENT (SDD) FOR
 \bigskip
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-Version 1.0
+Version 2.0
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
@@ -353,22 +353,27 @@ The selection of the Ionic Framework followed the consideration of other framewo
 \\
 The Ionic framework builds off of Apache Cordova and allows for the development of a single code-base that creates an Android, Windows, and iOS application. The framework is an extremely popular open source product with a large community to help with any problems that arise. Ionic is also designed with the native SDKs in mind allowing users to have a native iOS, Android, or Windows experience.
 
+\newpage
 \subsubsection{UML Diagrams}
 
+\noindent\textit{Data Entry/Browsing and Search:}\newline
+Figure 1. shows the UML diagram used for both the browsing and search functionality as well as the data entry. Each form type contains a list of inspections and are sub-types of an abstract ReportType. This structure of data modeling was used to best represent shared data the all three report types contain while still allowing each of them to have multiple inspections. The User class, an instance of which is pulled upon login, is used by the Restaurant class to indicate the person performing the inspections. This is in alternative to having a separate attribute in the Restaurant class for the inspector which would be duplicating stored data. Also, of the three report types, only Septic uses an instance of the Location class in addition to the one inherited, so that the owner's location can be stored if it is different from the actual location of the well.
 \begin{figure}[H]
 \centering
-\includegraphics[width=6in,height=6in]{uml.jpg}
-\caption{Shows abstractions for data on forms and search.}
+\includegraphics[width=6in,height=6in]{Browsing_and_Search_UML.jpg}
+\caption{Abstractions for data on forms and search.}
 \end{figure}
 
-\subsubsection{Delayed Upload}
+\newpage
+\noindent\textit{Delayed Upload:}
+\newline
+When control is passed to the DelayedUploadController a few processes can be run. The following Figure 2 illustrates when an update is run locally. 
 
-When control is passed to the DelayedUploadController a few processes can be run. When an update is run locally, 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=6in,height=6in]{Delayed_Upload_UML.png}
-\caption{Shows abstractions for the system's uploading of forms.}
+\caption{Abstractions for the system's uploading of forms.}
 \end{figure}
 
 \subsection[SYSTEM IMPLEMENTATION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
@@ -396,23 +401,36 @@ All classes and functions described in this section will be written in Javascrip
 All classes will have getter and setter methods to give access to the many variables. These functions will be public so information about the reports can be accessed anywhere. Examples include:
 \begin{center}
 \begin{verbatim}
-function isValid?: checks the report to ensure that it is valid to be saved. If it is not, highlights
+-function isValid?: checks the report to ensure that it is valid to be saved. If it is not, highlights
 all invalid inputs.
-function submit: allocates memory for the report and saves it to the local database.
-function filterRecordsWithQuery(Query query): Given a query, filter the records to show all records
+
+-function submit: allocates memory for the report and saves it to the local database.
+
+-function filterRecordsWithQuery(Query query): Given a query, filter the records to show all records
 that conform to the query.
-function displayRecordWithID(int id): Given a report ID, display the report associated with that ID.
-function getRecordsForBrowse(int recordType, String town): Returns all reports of the given type
+
+-function displayRecordWithID(int id): Given a report ID, display the report associated with that ID.
+
+-function getRecordsForBrowse(int recordType, String town): Returns all reports of the given type
 for the given town.
-function getOnlineStatus(): Checks to see if device is connected to the internet.
-function addFormToSync(UID): Given the UID, places form in queue to be uploaded
-function getNewData(): Checks form to get new data.
-function uploadNewData(): Uploads any new data to database.
-function showSyncGraphic(): Displays the syncing graphic as upload is in progress.
-function synced: returns boolean of is synced or not synced.
-function isSynced(): Checks to see if form is synced with the database.
-function sendUpdatedModels(): Sends the updated models to the database.
-function getUpdatedModels(): Requests the updated models from the database.
+
+-function getOnlineStatus(): Checks to see if device is connected to the internet.
+
+-function addFormToSync(UID): Given the UID, places form in queue to be uploaded
+
+-function getNewData(): Checks form to get new data.
+
+-function uploadNewData(): Uploads any new data to database.
+
+-function showSyncGraphic(): Displays the syncing graphic as upload is in progress.
+
+-function synced: returns boolean of is synced or not synced.
+
+-function isSynced(): Checks to see if form is synced with the database.
+
+-function sendUpdatedModels(): Sends the updated models to the database.
+
+-function getUpdatedModels(): Requests the updated models from the database.
 \end{verbatim}
 \end{center}
 
