@@ -135,7 +135,7 @@ SOFTWARE DESIGN DOCUMENT (SDD) FOR
 \bigskip
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-Version 1.0
+Version 2.0
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
@@ -347,42 +347,90 @@ ARCHITECTURAL AND COMPONENT-LEVEL DESIGN}
 \subsection[SYSTEM STRUCTURE]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM STRUCTURE}
 Health-e will be written in HTML5, CSS and Javascript. We will use the Ionic Framework to deploy the application for iOS and Android simultaneously. Ionic utilizes AngularJS and Sass to offer libraries for mobile-optimized HTML, CSS, and Javascript components. Additionally, we will be using the Ionic Material library for an advanced UI for our app. 
+
+\subsubsection{Justification}
+The selection of the Ionic Framework followed the consideration of other frameworks including the native iOS and Android SDKs. After recognizing that a health inspector should not be limited to any single device, a priority was placed on the availability of the tablet application. 
+\\
+The Ionic framework builds off of Apache Cordova and allows for the development of a single code-base that creates an Android, Windows, and iOS application. The framework is an extremely popular open source product with a large community to help with any problems that arise. Ionic is also designed with the native SDKs in mind allowing users to have a native iOS, Android, or Windows experience.
+
+\newpage
 \subsubsection{UML Diagrams}
 
+\noindent\textit{Data Entry/Browsing and Search:}\newline
+Figure 1. shows the UML diagram used for both the browsing and search functionality as well as the data entry. Each form type contains a list of inspections and are sub-types of an abstract ReportType. This structure of data modeling was used to best represent shared data the all three report types contain while still allowing each of them to have multiple inspections. The User class, an instance of which is pulled upon login, is used by the Restaurant class to indicate the person performing the inspections. This is in alternative to having a separate attribute in the Restaurant class for the inspector which would be duplicating stored data. Also, of the three report types, only Septic uses an instance of the Location class in addition to the one inherited, so that the owner's location can be stored if it is different from the actual location of the well.
 \begin{figure}[H]
 \centering
 \includegraphics[width=6in,height=6in]{Browsing_and_Search_UML.jpg}
-\caption{Shows abstractions for data on forms and search.}
+\caption{Abstractions for data on forms and search.}
 \end{figure}
-\noindent Figure 1. shows the UML diagram used for both the browsing and search functionality as well as the data entry. Each form type contains a list of inspections and are sub-types of an abstract ReportType. This structure of data modeling was used to best represent shared data the all three report types contain while still allowing each of them to have multiple inspections. The User class, an instance of which is pulled upon login, is used by the Restaurant class to indicate the person performing the inspections. This is in alternative to having a separate attribute in the Restaurant class for the inspector which would be duplicating stored data. Also, of the three report types, only Septic uses an instance of the Location class in addition to the one inherited, so that the owner's location can be stored if it is different from the actual location of the well.
+
+\newpage
+\noindent\textit{Delayed Upload:}
+\newline
+When control is passed to the DelayedUploadController a few processes can be run. The following Figure 2 illustrates when an update is run locally. 
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=6in,height=6in]{Delayed_Upload_UML.png}
-\caption{Shows abstractions for the system's uploading of forms.}
+\caption{Abstractions for the system's uploading of forms.}
 \end{figure}
 
 \subsection[SYSTEM IMPLEMENTATION]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 SYSTEM IMPLEMENTATION}
 {\selectlanguage{english}\rmfamily\color{black}
-All classes and functions described in this section will be written in Javascript.
+All classes and functions described in this section will be written in Javascript. All classes are meant to represent and contain all relevant information pertaining to their real life incarnations. Thus, class attributes for reports are predominantly taken from official documents, and all supporting classes utilize as much real-world information as is relevant.
 \subsubsection{Class Definitions}
 \begin{itemize}
-\item Report - Superclass for Restaurant, Well and Septic classes. Contains most basic report/form information.
-\item Restaurant - Subclass of Report. Contains all fields pertaining to Restaurant Form input.
-\item Well -  Subclass of Report. Contains all fields pertaining to Well  Form input.
-\item Septic - Subclass of Report. Contains all fields pertaining to Septic Form input.
-\item Location - Specific information pertaining to where a report takes place.
-\item User - References the user/inspector that is logged into the system and submitting a restaurant report.
-\item Violation - Specifics to the type of restaurant violation including a text description.
-\item Query - Contains ability to search for past submitted forms by report type, date, and keywords.
+\item restaurant - contains basic information on the restaurant
+\item report - Superclass for restaurantReport, wellReport and SepticReport classes. Contains most basic report/form information.
+\item restaurantReport - Subclass of report. contains information on restaurants that pertain to the restaurant inspections.
+\item wellReport -  Subclass of report. Contains all fields pertaining to Well Report input.
+\item septicReport - Subclass of report. Contains all fields pertaining to Septic Report input.
+\item location - Specific information pertaining on where to find a specific location .
+\item user - References the user/inspector that is logged into the system and submitting a restaurant report.
+\item violation - Specifics to the type of restaurant violation including a text description.
+\item query - Contains ability to search for past submitted forms by report type, date, and keywords.
+\item date - uses the default date class from JavaScript.
+\item delayedUploadController - Contains ability to get online status, choose form to sync, get new data, and upload new data.
+\item delayedUploadView - Displays the sync graphic when syncing.
+\item syncController - Contains ability to check if synced, send updated models, and receive updated models.
+\item syncFormModel - Receives the unique identification number.
 \end{itemize}
 \subsubsection{Function Descriptions}
 All classes will have getter and setter methods to give access to the many variables. These functions will be public so information about the reports can be accessed anywhere. Examples include:
 \begin{center}
 \begin{verbatim}
-function filterRecordsWithQuery(String query)
-function displayRecordWithID(int id)
-function getRecordsForBrowse(int recordType, String town)
+-function isValid?: checks the report to ensure that it is valid to be saved. If it is not, highlights
+all invalid inputs.
+
+-function submit: allocates memory for the report and saves it to the local database.
+
+-function filterRecordsWithQuery(Query query): Given a query, filter the records to show all records
+that conform to the query.
+
+-function displayRecordWithID(int id): Given a report ID, display the report associated with that ID.
+
+-function getRecordsForBrowse(int recordType, String town): Returns all reports of the given type
+for the given town.
+
+-function getOnlineStatus(): Checks to see if device is connected to the internet.
+
+-function addFormToSync(UID): Given the UID, places form in queue to be uploaded
+
+-function getNewData(): Checks form to get new data.
+
+-function uploadNewData(): Uploads any new data to database.
+
+-function showSyncGraphic(): Displays the syncing graphic as upload is in progress.
+
+-function synced: returns boolean of is synced or not synced.
+
+-function isSynced(): Checks to see if form is synced with the database.
+
+-function sendUpdatedModels(): Sends the updated models to the database.
+
+-function getUpdatedModels(): Requests the updated models from the database.
 \end{verbatim}
 \end{center}
 
@@ -397,15 +445,36 @@ FORM ENTRY}
 
 \subsection[BROWSING AND SEARCH]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 BROWSING AND SEARCH}
-\subsubsection{Principle Action 1}
-\subsubsection{Principle Action 2}
-\subsubsection{Principle Action 3}
-
+\subsubsection{Principle Action: Browse Records}
+To browse records, the main controller accesses the database for all stored records. The database returns the records, and they are stored in Report objects which are displayed as icons for the user.
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=2in]{BrowseRecords.png}
+\caption{Sequence diagram for retrieving reports for browsing}
+\end{figure}
+\subsubsection{Principle Action: Search for Reports}
+To search for a report, a query object is created from a search string inputted by the user. Through an Ionic plugin, the query filters out the previously loaded reports that are not relevant according to the query string.
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=3in]{SearchForRecords.png}
+\caption{Sequence diagram for filtering stored reports}
+\end{figure}
 \subsection[DELAYED UPLOAD]{\selectlanguage{english}\rmfamily\bfseries\color{black}
 DELAYED UPLOAD}
-\subsubsection{Principle Action 1}
-\subsubsection{Principle Action 2}
-\subsubsection{Principle Action 3}
+\subsubsection{Principle Action: Add Document to be Uploaded}
+To add a document to be uploaded, control is passed from the main controller to the DelayedUploadController where .addFormToSync is called, thus passing control to the SyncController where the document is added to a queue.
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in,height=2in]{Add.jpg}
+\caption{Sequence diagram for adding a document to be uploaded.}
+\end{figure}
+\subsubsection{Principle Action: Upload Document}
+To upload a document, control starts with the SyncController and is passed to the SyncFormModel. The document is then uploaded to the database and the SyncController informs the DelayedUploadController of its success. The DelayedUploadController then updates the status icon for that document using DelayedUploadView.
+\begin{figure}[H]
+\centering
+\includegraphics[width=5in,height=3in]{Upload.jpg}
+\caption{Sequence diagram for uploading a document.}
+\end{figure}
 
 
 \clearpage\section[DATA DESIGN]{\selectlanguage{english}\rmfamily\bfseries\color{black}
